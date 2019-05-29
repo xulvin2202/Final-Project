@@ -1,0 +1,16 @@
+D:\Project\Ecommerce\Model\bin\Debug\Model.dll.config
+D:\Project\Ecommerce\Model\bin\Debug\Model.dll
+D:\Project\Ecommerce\Model\bin\Debug\Model.pdb
+D:\Project\Ecommerce\Model\bin\Debug\EntityFramework.dll
+D:\Project\Ecommerce\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\Ecommerce\Model\bin\Debug\PagedList.dll
+D:\Project\Ecommerce\Model\bin\Debug\PagedList.Mvc.dll
+D:\Project\Ecommerce\Model\bin\Debug\EntityFramework.xml
+D:\Project\Ecommerce\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\Ecommerce\Model\bin\Debug\PagedList.xml
+D:\Project\Ecommerce\Model\bin\Debug\PagedList.Mvc.xml
+D:\Project\Ecommerce\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Project\Ecommerce\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\Project\Ecommerce\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Project\Ecommerce\Model\obj\Debug\Model.dll
+D:\Project\Ecommerce\Model\obj\Debug\Model.pdb

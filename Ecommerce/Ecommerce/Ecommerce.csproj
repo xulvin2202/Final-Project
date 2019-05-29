@@ -1,0 +1,734 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B43CF41-6647-4FD2-8816-1BD4096B68E2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ecommerce</RootNamespace>
+    <AssemblyName>Ecommerce</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Admin\Models\LoginModel.cs" />
+    <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\Encryptor.cs" />
+    <Compile Include="Common\UserLogin.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Admin\oculux\backblue.gif" />
+    <Content Include="Assets\Admin\oculux\fade.gif" />
+    <Content Include="Assets\Admin\oculux\hts-cache\new.lst" />
+    <Content Include="Assets\Admin\oculux\hts-cache\new.txt" />
+    <Content Include="Assets\Admin\oculux\hts-cache\readme.txt" />
+    <Content Include="Assets\Admin\oculux\hts-log.txt" />
+    <Content Include="Assets\Admin\oculux\index.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\coin\BTC.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\coin\ETC.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\coin\ETH.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\coin\LTC.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\coin\neo.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\coin\qtum.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\coin\XRP.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\details_close.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\details_open.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\flag\arabia.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\flag\au.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\flag\ca.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\flag\france.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\flag\gb.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\flag\nl.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\flag\russia.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\flag\us.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\flag\ZZ.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\icon.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\1.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\10.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\11.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\12.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\13.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\14.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\15.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\2.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\3.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\4.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\5.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\6.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\7.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\8.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\image-gallery\9.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\login-img.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\mastercard.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\news\news1.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\news\news10.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\news\news2.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\news\news3.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\news\news4.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\news\news5.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\news\news6.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\news\news7.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\news\news8.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\news\news9.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\paypal.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\plan-1.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\plan-2.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\plan-3.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\preview.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\preview01.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\preview02.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\preview03.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\sm\avatar1.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\sm\avatar2.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\sm\avatar3.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\sm\avatar4.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\sm\avatar5.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\sm\avatar6.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\user-small.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\user.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\visa-card.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\xs\avatar1.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\xs\avatar10.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\xs\avatar2.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\xs\avatar3.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\xs\avatar4.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\xs\avatar5.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\xs\avatar6.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\xs\avatar7.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\xs\avatar8.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\images\xs\avatar9.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\animate-css\vivify.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-colorpicker\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-colorpicker\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-colorpicker\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-colorpicker\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-colorpicker\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-datepicker\js\bootstrap-datepicker.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-markdown\bootstrap-markdown.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-markdown\bootstrap-markdown.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-multiselect\bootstrap-multiselect.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-multiselect\bootstrap-multiselect.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-progressbar\css\bootstrap-progressbar-3.3.4.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-progressbar\js\bootstrap-progressbar.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-tagsinput\bootstrap-tagsinput.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap-tagsinput\bootstrap-tagsinput.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\c3\c3.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\chartist-plugin-tooltip\chartist-plugin-tooltip.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\chartist\css\chartist.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\chartist\css\chartist.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\ckeditor\ckeditor.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\countdowntime\moment-timezone-with-data.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\countdowntime\moment-timezone.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\countdowntime\moment.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\cropper\cropper-init.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\cropper\cropper.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\cropper\cropper.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\dropify\css\dropify.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\dropify\fonts\dropify.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\dropify\js\dropify.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\dropify\js\dropify.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\editable-table\mindmup-editabletable.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\flot-charts\jquery.flot.selection.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\flot-charts\jquery.flot.time.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\font-awesome\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-datatable\buttons\buttons.bootstrap4.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-datatable\buttons\buttons.colVis.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-datatable\buttons\buttons.html5.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-datatable\buttons\buttons.print.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-datatable\buttons\dataTables.buttons.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-datatable\dataTables.bootstrap4.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-datatable\fixedeader\dataTables.fixedcolumns.bootstrap4.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-datatable\fixedeader\dataTables.fixedheader.bootstrap4.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-inputmask\jquery.inputmask.bundle.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-knob\jquery.knob.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-sparkline\js\jquery.sparkline.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-steps\jquery.steps.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-steps\jquery.steps.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery-validation\jquery.validate.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jquery.maskedinput\jquery.maskedinput.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jvectormap\jquery-jvectormap-2.0.3.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jvectormap\jquery-jvectormap-au-mill.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jvectormap\jquery-jvectormap-in-mill.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jvectormap\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jvectormap\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\light-gallery\css\lightgallery.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\light-gallery\fonts\lgd641.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\light-gallery\img\loading.gif" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\light-gallery\img\video-play.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\light-gallery\img\vimeo-play.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\light-gallery\img\youtube-play.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\markdown\markdown.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\morrisjs\morris.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\multi-select\css\multi-select.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\multi-select\img\switch.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\multi-select\js\jquery.multi-select.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\nestable\jquery-nestable.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\nestable\jquery.nestable.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\nouislider\nouislider.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\nouislider\nouislider.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\parsleyjs\css\parsley.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\parsleyjs\js\parsley.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\rangeslider\css\ion.rangeSlider.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\rangeslider\css\ion.rangeSlider.skinModern.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\rangeslider\img\sprite-skin-modern.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\rangeslider\js\ion.rangeSlider.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\summernote\dist\summernote.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\summernote\dist\summernote.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\sweetalert\sweetalert.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\sweetalert\sweetalert.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\table-dragger\table-dragger.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\table-dragger\table-dragger.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\themify-icons\demo-files\demo.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\themify-icons\fonts\themify9f24.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\themify-icons\themify-icons.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\to-markdown\to-markdown.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\toastr\toastr.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\toastr\toastr.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\toastr\toastr.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\app-calendar.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\app-chat.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\app-inbox.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\assets\img01.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\assets\img02.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\assets\img03.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\assets\img04.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\assets\img05.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\assets\img06.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\assets\img07.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\assets\img08.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\assets\img09.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\assets\img10.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\assets\img11.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\assets\img12.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\favicon.ico" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\index.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\page-blog.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\page-invoices.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\page-login.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\page-news.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\page-profile.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\page-social.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\documentation\page-timeline.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\accounts.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\activities.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\app-calendar.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\app-chat.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\app-inbox.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\departments.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\employee.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\events.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\favicon.ico" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\holidays.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\index.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\page-invoices-detail.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\page-invoices.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\page-login.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\page-profile.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\page-timeline.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\payroll.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\profile.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\report.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\users.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\hrms\{{route%28%27pages.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\app-calendar.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\app-chat.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\app-clients.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\app-compose.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\app-contact.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\app-contact2.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\app-inbox-detail.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\app-inbox.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\app-project-list.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\app-taskboard.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\app-ticket-details.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\app-ticket.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\app-todo.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\bundles\c3.bundle.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\bundles\chartist.bundle.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\bundles\datatablescripts.bundle.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\bundles\datatablescripts.bundle.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\bundles\flotscripts.bundle.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\bundles\fullcalendarscripts.bundle.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\bundles\jvectormap.bundle.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\bundles\knob.bundle.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\bundles\libscripts.bundle.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\bundles\lightgallery.bundle.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\bundles\mainscripts.bundle.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\bundles\morrisscripts.bundle.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\bundles\vendorscripts.bundle.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\css\demo.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\css\site.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\fonts\simple-Line-Icons.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\images\image-gallery\13.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\images\image-gallery\2.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\hrdashboard.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\index.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\index10.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\index11.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\index2.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\index3.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\index4.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\index5.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\index6.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\index7.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\index8.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\index9.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\jobdashboard.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\calendar.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\calendar2.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\charts\c3.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\charts\chartjs.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\charts\flot.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\charts\jquery-knob.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\charts\morris.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\charts\sparkline.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\forms\advanced-form-elements.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\forms\dropify.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\forms\editors.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\forms\form-wizard.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\maps\jvectormap.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\medias\image-gallery.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\range-sliders.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\tables\editable-table.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\tables\jquery-datatable.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\tables\table-filter.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\ui\dialogs.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\ui\sortable-nestable.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\js\pages\widgets.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\chart-c3.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\chart-chartjs.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\chart-flot.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\chart-jquery-knob.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\chart-morris.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\chart-sparkline.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\cropped.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\favicon.ico" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\forms-advanced.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\forms-basic.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\forms-cropping.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\forms-dragdropupload.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\forms-editors.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\forms-markdown.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\forms-summernote.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\forms-validation.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\forms-wizard.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\index.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\index10.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\index11.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\index2.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\index3.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\index4.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\index5.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\index6.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\index7.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\index8.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\index9.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\map-jvectormap.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-404.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-blank.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-blog-post.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-blog.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-coming-soon.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-forgot-password.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-gallery.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-invoices-detail.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-invoices.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-login.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-login2.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-maintenance.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-news.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-pricing.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-profile.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-register.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-search-results.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-social.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-testimonials.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-timeline.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\page-user-list.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\table-color.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\table-dragger.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\table-editable.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\table-filter.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\table-jquery-datatable.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\table-normal.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-bootstrap.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-buttons.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-colors.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-dialogs.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-helper-class.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-icons-line.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-icons-themify.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-icons.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-list-group.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-media-object.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-modals.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-nestable.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-notifications.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-progressbars.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-range-sliders.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-tabs.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\ui-typography.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\widgets.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\index.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\accounts.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\app-inbox.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\applicants.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\events.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\favicon.ico" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\holidays.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\index.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\page-invoices-detail.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\page-login.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\payroll.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\positions.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\profile.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\report.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\resumes.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\settings.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\users.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\css\animate.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\css\bootstrap.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\css\main.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\css\owl.carousel.min.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\css\owl.theme.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\css\owl.video.play.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\css\responsive.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\css\slicknav.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\fonts\glyphicons-halflings-regular-5.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\fonts\glyphicons-halflings-regulard41d.html" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\fonts\line-icons.css" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\fonts\LineIconsa7fb.svg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\clients\img1.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\clients\img2.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\clients\img3.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\clients\img4.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\features-1.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\features-2.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\hero-1.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\logo-light.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\logo.png" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\sm\avatar1.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\sm\avatar2.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\team\team-01.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\team\team-02.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\team\team-03.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\img\team\team-04.jpg" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\bootstrap.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\contact-form-script.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\form-validator.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\jquery-min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\jquery.easing.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\jquery.nav.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\jquery.slicknav.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\main.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\owl.carousel.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\particles.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\particlesjs.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\popper.min.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\scrolling-nav.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\js\wow.js" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\favicon.ico" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\index.html" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Assets\Admin\oculux\hts-cache\doit.log" />
+    <Content Include="Assets\Admin\oculux\hts-cache\new.zip" />
+    <Content Include="Assets\Admin\oculux\hts-cache\winprofile.ini" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\dropify\fonts\dropify.eot" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\dropify\fonts\dropify.ttf" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\dropify\fonts\dropify.woff" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\font-awesome\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\font-awesome\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\font-awesome\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\font-awesome\fonts\fontawesome-webfont3e6e.woff2" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\light-gallery\fonts\lgd41d.eot" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\light-gallery\fonts\lgd641.eot" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\light-gallery\fonts\lgd641.ttf" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\light-gallery\fonts\lgd641.woff" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\summernote\dist\font\summernoted41d.eot" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\summernote\dist\font\summernotef534.eot" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\summernote\dist\font\summernotef534.ttf" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\summernote\dist\font\summernotef534.woff" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\themify-icons\fonts\themify9f24.eot" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\themify-icons\fonts\themify9f24.ttf" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\themify-icons\fonts\themify9f24.woff" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\assets\vendor\themify-icons\fonts\themifyd41d.eot" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\fonts\simple-Line-Icons.eot" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\fonts\simple-Line-Icons.ttf" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\fonts\simple-Line-Icons.woff" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\html\assets\fonts\weathericons-regular-webfontd41d.eot" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\fonts\LineIconsa7fb.eot" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\fonts\LineIconsa7fb.ttf" />
+    <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\landing\assets\fonts\LineIconsa7fb.woff" />
+    <Content Include="Areas\Admin\Views\Shared\_Layouts.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Assets\Client\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Home\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{bf33b025-eb31-4d86-994a-1233e083a56b}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6043</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6043/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
