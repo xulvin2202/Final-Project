@@ -63,15 +63,15 @@
                                 <td>
                                     <a href="~/Admin/User/Edit/@item.ID"><i class="icon-pencil"></i></a>
                                     |
-                                    <a href="~/Admin/User/Delete/@item.ID"><i class="icon-trash"></i></a>
-                                    |
-                                    @Ajax.ActionLink("Xóa","Delete",new AjaxOptions
-                               {
-                                   Confirm="Bạn có muốn xóa ?",
-                                   OnComplete = "$('row_"+@item.ID+"').remove()",
-                                   HttpMethod = "Delete"
-                               }
-                                   )
+                                   
+                                       @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
+                                   {
+                                       Confirm="Bạn chắc chắn muốn xóa ?",
+                                       OnComplete = "$('#row_"+@item.ID+"').remove()",
+                                       HttpMethod = "Delete"
+                                   }
+                                                 )
+                                   
                                 </td>
                             </tr>
                             }

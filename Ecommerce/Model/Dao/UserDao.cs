@@ -45,21 +45,22 @@ namespace Model.Dao
             }
 
         }
-        public bool Delete(int id)
-        {
-            try
-            {
-                var user = db.Users.Find(id);
-                db.Users.Remove(user);
-                db.SaveChanges();
-            }
-            catch(Exception ex)
-            {
-                return false;
-            }
+        //public bool Delete(int id)
+        //{
+        //    try
+        //    {
+        //        var user = db.Users.Find(id);
+        //        db.Users.Remove(user);
+        //        db.SaveChanges();
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        return false;
+        //    }
             
-            return
-        }
+        //    return
+                
+        //}
         public IEnumerable<User> ListAllPaging(int page, int pageSize)
         {
             return db.Users.OrderByDescending(x => x.CreateDate).ToPagedList(page,pageSize);
@@ -95,6 +96,21 @@ namespace Model.Dao
                 
                 }
             }
+        }
+        public bool Delete(int id)
+        {
+            try
+            {
+                var user = db.Users.Find(id);
+                db.Users.Remove(user);
+                db.SaveChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+            
         }
         public bool CheckUserName(string userName)
         {

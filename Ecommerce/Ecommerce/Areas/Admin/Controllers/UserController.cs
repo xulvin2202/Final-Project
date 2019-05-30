@@ -105,8 +105,10 @@ namespace Ecommerce.Areas.Admin.Controllers
             return View(user);
 
         }
+        [HttpDelete]
         public ActionResult Delete(int id)
         {
+            new UserDao().Delete(id);
             return RedirectToAction("Index");
         }
     }
