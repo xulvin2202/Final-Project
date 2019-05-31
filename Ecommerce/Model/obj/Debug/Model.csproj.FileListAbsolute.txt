@@ -14,7 +14,6 @@ D:\Project\Ecommerce\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 D:\Project\Ecommerce\Model\obj\Debug\Model.csproj.CopyComplete
 D:\Project\Ecommerce\Model\obj\Debug\Model.dll
 D:\Project\Ecommerce\Model\obj\Debug\Model.pdb
-D:\Sourcetree\Ecommerce\Model\obj\Debug\Model.csprojAssemblyReference.cache
 D:\Sourcetree\Ecommerce\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 D:\Sourcetree\Ecommerce\Model\obj\Debug\Model.dll
 D:\Sourcetree\Ecommerce\Model\obj\Debug\Model.pdb
@@ -30,3 +29,4 @@ D:\Sourcetree\Ecommerce\Model\bin\Debug\EntityFramework.SqlServer.xml
 D:\Sourcetree\Ecommerce\Model\bin\Debug\PagedList.xml
 D:\Sourcetree\Ecommerce\Model\bin\Debug\PagedList.Mvc.xml
 D:\Sourcetree\Ecommerce\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Sourcetree\Ecommerce\Model\obj\Debug\Model.csprojAssemblyReference.cache

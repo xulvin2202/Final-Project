@@ -38,7 +38,7 @@ namespace Ecommerce.Areas.Admin.Controllers
                 {
                     ModelState.AddModelError("", "Tên đăng nhập đã tồn tại");
                 }
-                else if (dao.CheckEmail(user.Email))
+                if (dao.CheckUserEmail(user.Email))
                 {
                     ModelState.AddModelError("", "Email đã tồn tại");
                 }
@@ -47,6 +47,7 @@ namespace Ecommerce.Areas.Admin.Controllers
                     var a = new User();
                     var encrytedMd5Hash = Encryptor.MD5Hash(user.Password);
                     user.Password = encrytedMd5Hash;
+                    a.Image = user.Image;
                     a.UserName = user.UserName;
                     a.Name = user.Name;
                     a.Phone = user.Phone;
@@ -83,7 +84,7 @@ namespace Ecommerce.Areas.Admin.Controllers
                     user.Password = encrytedMd5Hash;
                 }
                 var a = new User();
-                
+                a.Image = user.Image;
                 a.Name = user.Name;
                 a.Phone = user.Phone;
                 a.Address = user.Address;

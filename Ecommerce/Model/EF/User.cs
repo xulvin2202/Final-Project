@@ -17,6 +17,9 @@ namespace Model.EF
         [StringLength(32)]
         public string Password { get; set; }
 
+        [StringLength(500)]
+        public string Image { get; set; }
+
         [StringLength(50)]
         public string Name { get; set; }
 

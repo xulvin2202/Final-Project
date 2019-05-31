@@ -31,6 +31,7 @@ namespace Model.Dao
                 {
                     user.Password = entity.Password;
                 }
+                user.Image = entity.Image;
                 user.Address = entity.Address;
                 user.Email = entity.Email;
                 user.ModifiedBy = entity.ModifiedBy;
@@ -88,7 +89,7 @@ namespace Model.Dao
                 }
                 else
                 {
-                    if (result.Password == passWord)
+                    if (result.Password != null && result.Password.Equals( passWord,StringComparison.CurrentCultureIgnoreCase) )
 
                         return 1;
                     else
@@ -116,7 +117,7 @@ namespace Model.Dao
         {
             return db.Users.Count(x => x.UserName == userName) > 0;
         }
-        public bool CheckEmail(string email)
+        public bool CheckUserEmail(string email)
         {
             return db.Users.Count(x => x.Email == email) > 0;
         }
