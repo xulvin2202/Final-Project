@@ -46,25 +46,15 @@ namespace Model.Dao
             }
 
         }
-        //public bool Delete(int id)
-        //{
-        //    try
-        //    {
-        //        var user = db.Users.Find(id);
-        //        db.Users.Remove(user);
-        //        db.SaveChanges();
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        return false;
-        //    }
-            
-        //    return
-                
-        //}
-        public IEnumerable<User> ListAllPaging(int page, int pageSize)
+        
+        public IEnumerable<User> ListAllPaging(string searchString,int page, int pageSize)
         {
-            return db.Users.OrderByDescending(x => x.CreateDate).ToPagedList(page,pageSize);
+            IQueryable<User> model = db.Users;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.UserName.Contains(searchString) || x.Name.Contains(searchString) || x.Phone.Contains(searchString) || x.Address.Contains(searchString) || x.Email.Contains(searchString));
+            }
+            return model.OrderByDescending(x => x.CreateDate).ToPagedList(page,pageSize);
         }
         public User GetById(string userName)
         {

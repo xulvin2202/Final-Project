@@ -19,11 +19,22 @@
             <div class="tab-content mt-0">
                 <div class="tab-pane active show" id="Users">
                     <div class="table-responsive">
+                        <div class="body">
+                            @using (Html.BeginForm("Index", "User", FormMethod.Get))
+                            {
+                                <form id="navbar-search" class="navbar-form search-form"  >
+                                <div class="input-group mb-0">
+                                    <input type="text" class="form-control" value="@ViewBag.SearchString" name="searchString" placeholder="Search..." autocomplete="off">
+                                    <div class="input-group-append">
+                                        <button href="javascript:void(0);" class="btn btn-sm btn-primary btn-round" title="" type="submit" >Add New</button>
+                                    </div>
+                                </div>
+                            </form>
+                            }
+                            
+                        </div>
                         <table class="table table-hover table-custom spacing8">
                             <thead>
-
-                            </thead>
-                            <tbody>
                                 <tr>
                                     <th class="w60">Tên</th>
                                     <th></th>
@@ -32,36 +43,36 @@
                                     <th>Địa chỉ</th>
                                     <th class="w100">#</th>
                                 </tr>
-                            </tbody>
-                            <tfoot>
+                            </thead>
+                            <tbody>
                                 @foreach (var item in Model)
                                 {
                                     <tr>
                                         <td>
                                             <img src="@item.Image" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name">
                                         </td>
-                                        <td>
-                                            <h6 class="mb-0">@item.Name</h6>
-                                            <span>@item.Email</span>
+                                        <td >
+                                            <h6 class="mb-0" autocomplete="off">@item.Name</h6>
+                                            <span autocomplete="off">@item.Email</span>
                                         </td>
-                                        <td><span class="badge badge-success">@item.Status</span></td>
-                                        <td>@item.Phone</td>
-                                        <td>@item.Address</td>
+                                        <td autocomplete="off"><span class="badge badge-success">@item.Status</span></td>
+                                        <td autocomplete="off">@item.Phone</td>
+                                        <td autocomplete="off">@item.Address</td>
                                         <td>
                                             <a href="~/Admin/User/Edit/@item.ID" class="btn btn-sm btn-default" title="Edit"><i class="icon-pencil"></i></a>
                                             <button type="button" class="btn btn-sm btn-default js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
                                             @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
-                                    {
-                                        Confirm="Bạn chắc chắn muốn xóa ?",
-                                        OnComplete = "$('#row_"+@item.ID+"').remove()",
-                                        HttpMethod = "Delete",
-                                    }
-                                                  )
+                                       {
+                                           Confirm = "Bạn chắc chắn muốn xóa ?",
+                                           OnComplete = "$('#row_" + @item.ID + "').remove()",
+                                           HttpMethod = "Delete",
+                                       }
+)
                                         </td>
                                     </tr>
-                                }
+                                    }
 
-                            </tfoot>
+                            </tbody>
                         </table>
                         <div id="container" style="margin-left: 20px">
                             <p></p>
@@ -72,7 +83,7 @@
                                     of @Model.PageCount
                                 </tr>
                                 <br />
-                                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @seachString = @ViewBag.SearchString }))
                             </div>
                         </div>
                     </div>
