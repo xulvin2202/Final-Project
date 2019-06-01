@@ -188,5 +188,3 @@ D:\Sourcetree\Ecommerce\Ecommerce\obj\Debug\Ecommerce.csproj.CoreCompileInputs.c
 D:\Sourcetree\Ecommerce\Ecommerce\obj\Debug\Ecommerce.csproj.CopyComplete
 D:\Sourcetree\Ecommerce\Ecommerce\obj\Debug\Ecommerce.dll
 D:\Sourcetree\Ecommerce\Ecommerce\obj\Debug\Ecommerce.pdb
-D:\Sourcetree\Ecommerce\Ecommerce\bin\CKFinder.dll
-D:\Sourcetree\Ecommerce\Ecommerce\bin\CKFinder.pdb

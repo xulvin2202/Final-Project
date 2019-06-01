@@ -55,12 +55,12 @@ CKEDITOR.editorConfig = function (config) {
     config.removeButtons = 'Underline,Subscript,Superscript';
 
 
-    config.filebrowserBrowseUrl = '/Areas/admin/Content/ckfinder/ckfinder.html';
-    config.filebrowserImageUrl = '/Areas/admin/Content/ckfinder/ckfinder.html?Type=Images';
-    config.filebrowserFlashUrl = '/Areas/admin/Content/ckfinder/ckfinder.html?Type=Flash';
-    config.filebrowserUploadUrl = '/Areas/admin/Content/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload@type=Files';
-    config.filebrowserImageUploadUrl = '/Areas/admin/Content/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload@type=Images';
-    config.filebrowserFlashUploadUrl = '/Areas/admin/Content/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload@type=Flash';
+    config.filebrowserBrowseUrl = '/Assets/Admin/ckfinder/ckfinder.html';
+    config.filebrowserImageUrl = '/Assets/Admin/ckfinder/ckfinder.html?Type=Images';
+    config.filebrowserFlashUrl = '/Assets/Admin/ckfinder/ckfinder.html?Type=Flash';
+    config.filebrowserUploadUrl = '/Assets/Admin/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload@type=Files';
+    config.filebrowserImageUploadUrl = '/Assets/Admin/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload@type=Images';
+    config.filebrowserFlashUploadUrl = '/Assets/Admin/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload@type=Flash';
 
 
     config.extraPlugins = 'colorbutton';
@@ -84,5 +84,5 @@ CKEDITOR.editorConfig = function (config) {
     
     
 
-    CKFinder.setupCKEditor(null, "/Areas/admin/Content/ckfinder");
+    CKFinder.setupCKEditor(null, "/Assets/Admin/ckfinder/");
 };
