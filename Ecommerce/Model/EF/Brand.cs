@@ -9,12 +9,6 @@ namespace Model.EF
     [Table("Brand")]
     public partial class Brand
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Brand()
-        {
-            Products = new HashSet<Product>();
-        }
-
         public long ID { get; set; }
 
         [StringLength(250)]
@@ -23,10 +17,5 @@ namespace Model.EF
         public long? Product_Category_ID { get; set; }
 
         public long? MainCategory_ID { get; set; }
-
-        public virtual MainCategory MainCategory { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
     }
 }

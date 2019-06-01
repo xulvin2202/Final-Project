@@ -9,13 +9,6 @@ namespace Model.EF
     [Table("SubCategory")]
     public partial class SubCategory
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SubCategory()
-        {
-            Products = new HashSet<Product>();
-            Sub_Category_Attribute = new HashSet<Sub_Category_Attribute>();
-        }
-
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long ID { get; set; }
 
@@ -57,13 +50,5 @@ namespace Model.EF
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Category_ID { get; set; }
-
-        public virtual Category Category { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sub_Category_Attribute> Sub_Category_Attribute { get; set; }
     }
 }

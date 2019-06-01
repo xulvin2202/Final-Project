@@ -56,7 +56,5 @@ namespace Model.EF
         public string Tags { get; set; }
 
         public long? Content_Category_ID { get; set; }
-
-        public virtual Content_Category Content_Category { get; set; }
     }
 }

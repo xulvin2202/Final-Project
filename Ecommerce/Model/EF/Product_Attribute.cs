@@ -34,7 +34,5 @@ namespace Model.EF
 
         [StringLength(10)]
         public string MetaDescriptions { get; set; }
-
-        public virtual Product Product { get; set; }
     }
 }

@@ -47,7 +47,5 @@ namespace Model.EF
         public bool? ShowOnHome { get; set; }
 
         public long? Sub_Category_ID { get; set; }
-
-        public virtual SubCategory SubCategory { get; set; }
     }
 }

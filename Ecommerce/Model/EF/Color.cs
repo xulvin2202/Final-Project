@@ -9,12 +9,6 @@ namespace Model.EF
     [Table("Color")]
     public partial class Color
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Color()
-        {
-            Products = new HashSet<Product>();
-        }
-
         public long ID { get; set; }
 
         [StringLength(50)]
@@ -39,10 +33,5 @@ namespace Model.EF
         public string MetaDescriptions { get; set; }
 
         public long? MainCategory_ID { get; set; }
-
-        public virtual MainCategory MainCategory { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
     }
 }

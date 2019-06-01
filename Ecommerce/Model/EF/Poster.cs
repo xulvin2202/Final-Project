@@ -18,7 +18,5 @@ namespace Model.EF
         public string Link { get; set; }
 
         public long? Position_Poster_ID { get; set; }
-
-        public virtual Position_Poster Position_Poster { get; set; }
     }
 }

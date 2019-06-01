@@ -9,15 +9,6 @@ namespace Model.EF
     [Table("MainCategory")]
     public partial class MainCategory
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MainCategory()
-        {
-            Brands = new HashSet<Brand>();
-            Categories = new HashSet<Category>();
-            Colors = new HashSet<Color>();
-            Madeins = new HashSet<Madein>();
-        }
-
         public long ID { get; set; }
 
         [StringLength(250)]
@@ -55,17 +46,5 @@ namespace Model.EF
         public bool? Status { get; set; }
 
         public bool? ShowOnHome { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Brand> Brands { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Category> Categories { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Color> Colors { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Madein> Madeins { get; set; }
     }
 }

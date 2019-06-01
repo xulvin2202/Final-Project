@@ -56,11 +56,6 @@ namespace Model.EF
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Brand>()
-                .HasMany(e => e.Products)
-                .WithOptional(e => e.Brand)
-                .HasForeignKey(e => e.Brand_ID);
-
             modelBuilder.Entity<Category>()
                 .Property(e => e.MetaTitle)
                 .IsUnicode(false);
@@ -76,23 +71,12 @@ namespace Model.EF
             modelBuilder.Entity<Category>()
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
-
-            modelBuilder.Entity<Category>()
-                .HasMany(e => e.Materials)
-                .WithOptional(e => e.Category)
-                .HasForeignKey(e => e.Category_ID);
 
             modelBuilder.Entity<Category>()
                 .HasMany(e => e.Products)
                 .WithOptional(e => e.Category)
                 .HasForeignKey(e => e.Category_ID);
 
-            modelBuilder.Entity<Category>()
-                .HasMany(e => e.SubCategories)
-                .WithRequired(e => e.Category)
-                .HasForeignKey(e => e.Category_ID)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Color>()
                 .Property(e => e.CreateBy)
                 .IsUnicode(false);
@@ -104,11 +88,6 @@ namespace Model.EF
             modelBuilder.Entity<Color>()
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
-
-            modelBuilder.Entity<Color>()
-                .HasMany(e => e.Products)
-                .WithOptional(e => e.Color)
-                .HasForeignKey(e => e.Color_ID);
 
             modelBuilder.Entity<Content>()
                 .Property(e => e.MetaTitle)
@@ -141,11 +120,6 @@ namespace Model.EF
             modelBuilder.Entity<Content_Category>()
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
-
-            modelBuilder.Entity<Content_Category>()
-                .HasMany(e => e.Contents)
-                .WithOptional(e => e.Content_Category)
-                .HasForeignKey(e => e.Content_Category_ID);
 
             modelBuilder.Entity<Content_Tag>()
                 .Property(e => e.TagID)
@@ -167,11 +141,6 @@ namespace Model.EF
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Madein>()
-                .HasMany(e => e.Products)
-                .WithOptional(e => e.Madein)
-                .HasForeignKey(e => e.Madein_ID);
-
             modelBuilder.Entity<MainCategory>()
                 .Property(e => e.MetaTitle)
                 .IsUnicode(false);
@@ -188,39 +157,9 @@ namespace Model.EF
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
 
-            modelBuilder.Entity<MainCategory>()
-                .HasMany(e => e.Brands)
-                .WithOptional(e => e.MainCategory)
-                .HasForeignKey(e => e.MainCategory_ID);
-
-            modelBuilder.Entity<MainCategory>()
-                .HasMany(e => e.Categories)
-                .WithOptional(e => e.MainCategory)
-                .HasForeignKey(e => e.MainCategory_ID);
-
-            modelBuilder.Entity<MainCategory>()
-                .HasMany(e => e.Colors)
-                .WithOptional(e => e.MainCategory)
-                .HasForeignKey(e => e.MainCategory_ID);
-
-            modelBuilder.Entity<MainCategory>()
-                .HasMany(e => e.Madeins)
-                .WithOptional(e => e.MainCategory)
-                .HasForeignKey(e => e.MainCategory_ID);
-
-            modelBuilder.Entity<Material>()
-                .HasMany(e => e.Products)
-                .WithOptional(e => e.Material)
-                .HasForeignKey(e => e.Material_ID);
-
             modelBuilder.Entity<Menu>()
                 .Property(e => e.TypeID)
                 .IsFixedLength();
-
-            modelBuilder.Entity<Position_Poster>()
-                .HasMany(e => e.Posters)
-                .WithOptional(e => e.Position_Poster)
-                .HasForeignKey(e => e.Position_Poster_ID);
 
             modelBuilder.Entity<Product>()
                 .Property(e => e.Code)
@@ -249,16 +188,6 @@ namespace Model.EF
             modelBuilder.Entity<Product>()
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
-
-            modelBuilder.Entity<Product>()
-                .HasMany(e => e.Product_Attribute)
-                .WithOptional(e => e.Product)
-                .HasForeignKey(e => e.Product_ID);
-
-            modelBuilder.Entity<Product>()
-                .HasMany(e => e.Reviews)
-                .WithOptional(e => e.Product)
-                .HasForeignKey(e => e.Product_ID);
 
             modelBuilder.Entity<Product_Attribute>()
                 .Property(e => e.Price)
@@ -323,16 +252,6 @@ namespace Model.EF
             modelBuilder.Entity<SubCategory>()
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
-
-            modelBuilder.Entity<SubCategory>()
-                .HasMany(e => e.Products)
-                .WithOptional(e => e.SubCategory)
-                .HasForeignKey(e => e.SubCategory_ID);
-
-            modelBuilder.Entity<SubCategory>()
-                .HasMany(e => e.Sub_Category_Attribute)
-                .WithOptional(e => e.SubCategory)
-                .HasForeignKey(e => e.Sub_Category_ID);
 
             modelBuilder.Entity<Tag>()
                 .Property(e => e.ID)

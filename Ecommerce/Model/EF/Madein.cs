@@ -9,12 +9,6 @@ namespace Model.EF
     [Table("Madein")]
     public partial class Madein
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Madein()
-        {
-            Products = new HashSet<Product>();
-        }
-
         public long ID { get; set; }
 
         [StringLength(250)]
@@ -39,10 +33,5 @@ namespace Model.EF
         public bool? Status { get; set; }
 
         public long? MainCategory_ID { get; set; }
-
-        public virtual MainCategory MainCategory { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
     }
 }

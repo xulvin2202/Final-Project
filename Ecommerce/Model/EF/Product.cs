@@ -9,13 +9,6 @@ namespace Model.EF
     [Table("Product")]
     public partial class Product
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
-        {
-            Product_Attribute = new HashSet<Product_Attribute>();
-            Reviews = new HashSet<Review>();
-        }
-
         public long ID { get; set; }
 
         [StringLength(250)]
@@ -85,22 +78,6 @@ namespace Model.EF
 
         public long? Material_ID { get; set; }
 
-        public virtual Brand Brand { get; set; }
-
         public virtual Category Category { get; set; }
-
-        public virtual Color Color { get; set; }
-
-        public virtual Madein Madein { get; set; }
-
-        public virtual Material Material { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product_Attribute> Product_Attribute { get; set; }
-
-        public virtual SubCategory SubCategory { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Review> Reviews { get; set; }
     }
 }

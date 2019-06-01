@@ -8,12 +8,6 @@ namespace Model.EF
 
     public partial class Content_Category
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Content_Category()
-        {
-            Contents = new HashSet<Content>();
-        }
-
         public long ID { get; set; }
 
         [StringLength(250)]
@@ -48,8 +42,5 @@ namespace Model.EF
         public bool? Status { get; set; }
 
         public bool? ShowOnHome { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Content> Contents { get; set; }
     }
 }
