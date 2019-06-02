@@ -20,5 +20,21 @@ namespace Ecommerce.Areas.Admin.Controllers
             }
             base.OnActionExecuting(filterContext);
         }
+        protected void SetAlert(string message,string type)
+        {
+            TempData["AlertMessage"] = message;
+            if(type=="success")
+            {
+                TempData["AlertType"] = "btn btn-success btn-toastr";
+            }
+            else if(type == "warning")
+            {
+                TempData["AlertType"] = "btn btn-warning btn-toastr";
+            }
+            else if(type == "error")
+            {
+                TempData["AlertType"] = "btn btn-danger btn-toastr";
+            }
+        }
     }
 }

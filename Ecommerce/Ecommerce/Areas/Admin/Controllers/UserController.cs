@@ -9,7 +9,7 @@ using Model.EF;
 
 namespace Ecommerce.Areas.Admin.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         // GET: Admin/User
         public ActionResult Index(string searchString, int page = 1, int pageSize = 5 )
@@ -59,6 +59,7 @@ namespace Ecommerce.Areas.Admin.Controllers
                     var id = dao.Insert(user);
                     if (id > 0)
                     {
+                        SetAlert("Thêm thành công", "success");
                         ViewBag.Success = "Thêm thành công";
                         user = new User();
                         return RedirectToAction("Index", "User");
@@ -95,6 +96,7 @@ namespace Ecommerce.Areas.Admin.Controllers
                 var result = dao.Update(user);
                 if (result)
                 {
+                    SetAlert("Sửa thành công", "success");
                     ViewBag.Success = "Cập nhật thành công";
                     user = new User();
                     return RedirectToAction("Index", "User");
