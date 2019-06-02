@@ -113,5 +113,14 @@ namespace Ecommerce.Areas.Admin.Controllers
             new UserDao().Delete(id);
             return RedirectToAction("Index");
         }
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new UserDao().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
+        }
     }
 }

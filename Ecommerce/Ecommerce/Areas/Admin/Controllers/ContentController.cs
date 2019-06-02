@@ -39,6 +39,7 @@ namespace Ecommerce.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(Content content)
         {
             if(ModelState.IsValid)

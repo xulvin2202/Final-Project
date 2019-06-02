@@ -26,6 +26,10 @@ namespace Model.Dao
         {
             return db.Categories.Where(x => x.Status == true).ToList();
         }
+        public List<SubCategory> ListAllSubCategory()
+        {
+            return db.SubCategories.Where(x => x.Status == true).ToList();
+        }
 
     }
 }

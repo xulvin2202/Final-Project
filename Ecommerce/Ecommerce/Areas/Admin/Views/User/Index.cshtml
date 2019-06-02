@@ -26,7 +26,7 @@
                                 <div class="input-group mb-0">
                                     <input type="text" class="form-control" value="@ViewBag.SearchString" name="searchString" placeholder="Search..." autocomplete="off">
                                     <div class="input-group-append">
-                                        <button href="javascript:void(0);" class="btn btn-sm btn-primary btn-round" title="" type="submit" >Search</button>
+                                        <button href="javascript:void(0);" class="btn btn-success" title="" type="submit" >Search</button>
                                     </div>
                                 </div>
                             </form>
@@ -55,7 +55,7 @@
                                             <h6 class="mb-0" autocomplete="off">@item.Name</h6>
                                             <span autocomplete="off">@item.Email</span>
                                         </td>
-                                        <td autocomplete="off"><span class="badge badge-success">@item.Status</span></td>
+                                        <td><a href="#" class="btn btn-outline-success" data-id="@item.ID">@(item.Status?"Kích hoạt":"Khóa")</a></td>
                                         <td autocomplete="off">@item.Phone</td>
                                         <td autocomplete="off">@item.Address</td>
                                         <td>

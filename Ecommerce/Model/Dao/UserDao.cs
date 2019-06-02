@@ -103,6 +103,13 @@ namespace Model.Dao
             }
             
         }
+        public bool ChangeStatus(long id)
+        {
+            var user = db.Users.Find(id);
+            user.Status = !user.Status;
+            db.SaveChanges();
+            return user.Status;
+        }
         public bool CheckUserName(string userName)
         {
             return db.Users.Count(x => x.UserName == userName) > 0;

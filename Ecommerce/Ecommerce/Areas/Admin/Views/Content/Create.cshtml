@@ -6,19 +6,7 @@
 }
 @section header{thêm mới}
 @section jsFooter{
-<script>
-    $('#btnSelectImage').on('click', function (e) {
-            e.preventDefault();
-            var finder = new CKFinder();
-            finder.selectActionFunction = function (fileUrl) {
-                $('#txtImage').val(fileUrl);
-            };
-            finder.popup();
-    })
-    var editor = CKEDITOR.replace('txtContent', {
-        customConfig: '/Assets/Admin/ckeditor/config.js',
-    })
-    </script>
+
      }
 @using (Html.BeginForm())
 {
@@ -170,7 +158,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Content_Category_ID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Content_Category_ID, null, new { htmlAttributes = new { @class = "btn-group", @role="group" } })
+                @Html.DropDownListFor(model => model.Content_Category_ID, null, new { htmlAttributes = new { @class = "custom-select", @id = "inputGroupSelect01" } })
                 @Html.ValidationMessageFor(model => model.Content_Category_ID, "", new { @class = "text-danger" })
             </div>
         </div>
