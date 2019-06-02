@@ -61,13 +61,13 @@
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.Content_CategoryID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Content_CategoryID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.Content_CategoryID,null, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Content_CategoryID, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -166,11 +166,11 @@
                 @Html.ValidationMessageFor(model => model.Tags, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        
         <div class="form-group">
             @Html.LabelFor(model => model.Content_Category_ID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Content_Category_ID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.Content_Category_ID, null, new { htmlAttributes = new { @class = "btn-group", @role="group" } })
                 @Html.ValidationMessageFor(model => model.Content_Category_ID, "", new { @class = "text-danger" })
             </div>
         </div>

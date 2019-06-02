@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Model.Dao;
+using Model.EF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,9 +15,43 @@ namespace Ecommerce.Areas.Admin.Controllers
         {
             return View();
         }
+        [HttpGet]
         public ActionResult Create()
         {
+            SetViewBag();
             return View();
+        }
+        public ActionResult Edit(long id)
+        {
+            var dao = new EcommerceDao();
+            var content = dao.GetByID(id);
+            SetViewBag(content.Content_Category_ID);
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Edit(Content model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            SetViewBag(model.Content_Category_ID);
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Content content)
+        {
+            if(ModelState.IsValid)
+            {
+
+            }
+            SetViewBag();
+            return View();
+        }
+        public void SetViewBag(long? seletedID = null)
+        {
+            var dao = new Model.Dao.EcommerceDao();
+            ViewBag.Content_Category_ID = new SelectList(dao.ListAllContent(),"ID","Name",seletedID);
         }
     }
 }

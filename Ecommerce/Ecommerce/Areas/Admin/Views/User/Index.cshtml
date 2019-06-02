@@ -13,7 +13,7 @@
     <div class="col-lg-12">
         <div class="card">
             <ul class="nav nav-tabs">
-                <li class="nav-item"><a class="nav-link active show" data-toggle="tab" href="#Users">Users</a></li>
+                <li class="nav-item"><a class="nav-link active show" data-toggle="tab" href="#Users">Danh sách</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#">@Html.ActionLink("Tạo mới","Create")</a></li>
             </ul>
             <div class="tab-content mt-0">
@@ -26,7 +26,7 @@
                                 <div class="input-group mb-0">
                                     <input type="text" class="form-control" value="@ViewBag.SearchString" name="searchString" placeholder="Search..." autocomplete="off">
                                     <div class="input-group-append">
-                                        <button href="javascript:void(0);" class="btn btn-sm btn-primary btn-round" title="" type="submit" >Add New</button>
+                                        <button href="javascript:void(0);" class="btn btn-sm btn-primary btn-round" title="" type="submit" >Search</button>
                                     </div>
                                 </div>
                             </form>
@@ -81,6 +81,7 @@
                                 <tr>
                                     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
                                     of @Model.PageCount
+
                                 </tr>
                                 <br />
                                 @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @seachString = @ViewBag.SearchString }))
