@@ -64,17 +64,17 @@
                             <div class="form-group">
                                 <label for="signin-email" class="control-label sr-only">Email</label>
 
-                                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @autofocus = "autofocus", @style = "border-radius: 25px", @placeholder = "Nhập tài khoản" })
+                                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @autofocus = "autofocus", @style = "border-radius: 25px", @placeholder = "Nhập tài khoản", @autocomplete = "off" })
                             </div>
                             <div class="form-group">
                                 <label for="signin-password" class="control-label sr-only">Password</label>
-
-                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", @style = "border-radius: 25px", @placeholder = "Nhập mật khẩu" })
+                           
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control round", @style = "border-radius: 25px", @placeholder = "Nhập mật khẩu"})
                             </div>
                             <div class="form-group clearfix">
                                 <label class="fancy-checkbox element-left">
                                     <input type="checkbox">
-                                    <span>@Html.CheckBoxFor(model => model.RememberMe)Remember me</span>
+                                    <span>@Html.CheckBoxFor(model => model.RememberMe, new { @onclick = "myFunction()" })Remember me</span>
                                 </label>
                             </div>
                             <button type="submit" class="btn btn-primary btn-round btn-block">Đăng nhập</button>
@@ -99,6 +99,7 @@
     <script src="~/Assets/Admin/oculux/puffintheme.com/demo/oculux/html/assets/bundles/vendorscripts.bundle.js"></script>
   
     <script src="~/Assets/Admin/oculux/puffintheme.com/demo/oculux/html/assets/bundles/mainscripts.bundle.js"></script>
+    
 </body>
 
 <!-- Mirrored from puffintheme.com/demo/oculux/html/page-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 May 2019 02:40:34 GMT -->

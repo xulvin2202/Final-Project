@@ -86,7 +86,7 @@ namespace Ecommerce.Areas.Admin.Controllers
                     user.Password = encrytedMd5Hash;
                 }
                 var a = new User();
-                a.Image = user.Image;
+              
                 a.Name = user.Name;
                 a.Phone = user.Phone;
                 a.Address = user.Address;

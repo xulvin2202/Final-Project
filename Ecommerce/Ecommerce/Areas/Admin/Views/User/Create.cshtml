@@ -57,15 +57,7 @@
                                 <label>Tên</label>
                                 <input type="text" id="Name" name="Name" placeholder="Nhập tên" class="form-control" required>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.TextBoxFor(model => model.Image, new { htmlAttributes = new { @class = "form-control", @id = "txtImage" }, id = "txtImage" })
-                                <a id="btnSelectImage" href="#">Chọn</a>
-                                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
-                            </div>
-                        </div>  
+                        </div> 
                         <div class="form-group" autocomplete="off">
                             <div class="col-md-4">
                                 <label>Địa chỉ</label>
