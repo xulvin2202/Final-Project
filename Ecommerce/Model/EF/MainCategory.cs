@@ -15,6 +15,9 @@ namespace Model.EF
         public string Name { get; set; }
 
         [StringLength(50)]
+        public string Icon { get; set; }
+
+        [StringLength(50)]
         public string Image { get; set; }
 
         [StringLength(250)]
