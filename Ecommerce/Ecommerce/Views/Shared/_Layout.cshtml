@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link data-stencil-stylesheet href="~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/css/theme-e66d7b10-fb9a-0136-2016-0758c51394b6.css" rel="stylesheet">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&amp;display=swap" rel="stylesheet">
     <script>
         // Change document class from no-js to js so we can detect this in css
@@ -962,67 +962,14 @@
                 <div class="header-top-inner">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-sm-12 d-none d-md-block">
-                            <div class="phone-support">
-                                <i class="fa fa-phone"></i>
-                                Call us:  <a href="tel:0-943-446-000"><b>0-943-446-000</b></a>
-                            </div>
-                            <div class="email-support">
-                                <i class="fa fa-envelope"></i>
-                                Email:  contact@revo.com
-                            </div>
-                            <div class="email-support">
-                                <i class="nav-packard-glow-loc-icon"></i>
-                                Location
-                            </div>
+                            @{ Html.RenderAction("TopMenuLeft", "Home");}
                         </div>
                         <div class="col-xl-6 col-lg-6 col-sm-12 col-right">
-                            <ul class="navUser-section currency">
-                                <li class="navUser-item">
-                                    <a class="has-dropdown" href="#" data-dropdown="navUser-currencySelection" aria-controls="navUser-currencySelection" aria-expanded="false">
-                                        USD
-                                        <i class="fa fa-caret-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu" id="navUser-currencySelection" data-dropdown-content aria-hidden="false" tabindex="-1">
-                                        <li class="dropdown-menu-item">
-                                            <a href="index85eb.html?setCurrencyId=1">
-                                                <strong>USD</strong>
-                                            </a>
-                                        </li>
-                                        <li class="dropdown-menu-item">
-                                            <a href="index612c.html?setCurrencyId=2">
-                                                AUD
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul class="navUser-section toplinks-wrapper">
-                                <li class="navUser-item d-none d-sm-block">
-                                    <a class="navUser-action navUser-item--compare" href="compare.html" data-compare-nav> Compare </a>
-                                </li>
-                                <li class="navUser-item wishlist">
-                                    <a class="navUser-action cart-button cart-button--wishlist" href="login830b.html">
-                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                        My Wishlist
-                                    </a>
-                                </li>
-                                <li class="navUser-item">
-                                    <a class="navUser-action has-dropdown" href="#" data-dropdown="accountSelection" aria-controls="accountSelection" aria-expanded="false">
-                                        <i class="fa fa-user"></i>
-                                        Sign In
-                                        <i class="fa fa-caret-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu" id="accountSelection" data-dropdown-content aria-hidden="true" tabindex="-1">
-
-                                        <li class="dropdown-menu-item"> <a href="login.html">Sign in</a></li>
-                                        <li class="dropdown-menu-item">  <a href="logind85d.html?action=create_account">Register</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                           @{ Html.RenderAction("TopMenuRight", "Home");}
                         </div>
                     </div>
+                    </div>
                 </div>
-            </div>
         </div>
         <div class="stickey-header" data-sticky-header>
             <div class="header-center">
@@ -1040,10 +987,10 @@
 
                             <nav class="navPages-horizontal navPages-container" id="menu">
                                 <span class="mobileMenu-close fa fa-times"></span>
-                               @{ Html.RenderAction("MainMenu", "Home");}
+                                @{ Html.RenderAction("MainMenu", "Home");}
 
                             </nav>
-                            
+
                             <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
                                 <span class="mobileMenu-toggleIcon">Toggle menu</span>
                             </a>
@@ -1068,7 +1015,7 @@
                                              aria-hidden="true"></div>
                                     </li>
                                 </ul>
-                            
+
                             </div>
                         </div>
                     </div>
@@ -1091,13 +1038,13 @@
                                data-collapsible-textmore="More Categories"
                                data-collapsible-textclose="Close Categories">
                                 <svg class="icon-alignleft" width="18" height="18"><use xlink:href="#icon-alignleft"></use></svg>
-                               <i class="icon-alignleft"></i> <span class="title-mega">All Categories </span>
+                                <i class="icon-alignleft"></i> <span class="title-mega">All Categories </span>
                                 <svg class="icon-caret-circle" width="16" height="16"><use xlink:href="#icon-caret-circle-down"></use></svg>
                             </a>
 
                             <div class="verticalCategories  " id="verticalCategories" aria-hidden="true" tabindex="-1">
                                 <span class="mobileMenu-close fa fa-times"></span>
-                               @{ Html.RenderAction("MainCategory", "Home");}
+                                @{ Html.RenderAction("MainCategory", "Home");}
                             </div>
                         </div>
 
@@ -1135,8 +1082,8 @@
     </header>
 
     <!-- snippet location Main Body -->
-    @RenderSection("Slide",required:false)
-    
+    @RenderSection("Slide", required: false)
+
     <div id="modal" class="modal" data-reveal data-prevent-quick-search-close>
         <a href="#" class="modal-close" aria-label="Close" role="button">
             <span aria-hidden="true">&#215;</span>
@@ -1617,7 +1564,7 @@
     <script>window.__webpack_public_path__ = "https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/dist/";</script>
     <script src="~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/dist/theme-bundle.main.js"></script>
 
-   
+
     <script defer src="~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/modernizr-custom.js"></script>
     <script>
         // Exported in app.js
@@ -1625,75 +1572,72 @@
     </script>
 
     <!-- Newsletter Popup -->
-
-
-
     @*<div id="sb-newletter-popup" class="hide">
-        <div class="popup-overlay"></div>
-        <div class="newsletter-popup-container">
-            <a href="#" class="modal-close" aria-label="Close" role="button" data-close-newsletter-popup>
-                <span aria-hidden="true">&#215;</span>
-            </a>
-            <div class="newsletter-content d-flex">
-                <div class="newsletter-popup--left col d-none d-sm-block">
-                    <img data-sizes="auto" class="img-fluid lazyload " src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/content/home1/banners/bg_newsletter.jpg" alt="Newsletter " />
-                </div>
+            <div class="popup-overlay"></div>
+            <div class="newsletter-popup-container">
+                <a href="#" class="modal-close" aria-label="Close" role="button" data-close-newsletter-popup>
+                    <span aria-hidden="true">&#215;</span>
+                </a>
+                <div class="newsletter-content d-flex">
+                    <div class="newsletter-popup--left col d-none d-sm-block">
+                        <img data-sizes="auto" class="img-fluid lazyload " src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/content/home1/banners/bg_newsletter.jpg" alt="Newsletter " />
+                    </div>
 
-                <div class="newsletter-popup--right col">
-                    <h2 class="newsletter-heading">Newsletter </h2>
-                    <p class="newsletter-sub-heading">Subscribe to the Furnicom mailing list to receive updates on new arrivals, special offers and other discount information.</p>
-                    <div id="popupSubcribeForm">
+                    <div class="newsletter-popup--right col">
+                        <h2 class="newsletter-heading">Newsletter </h2>
+                        <p class="newsletter-sub-heading">Subscribe to the Furnicom mailing list to receive updates on new arrivals, special offers and other discount information.</p>
+                        <div id="popupSubcribeForm">
 
-                        <form class="form " action="https://sb-clickboom.mybigcommerce.com/subscribe.php" method="post" id="popupSubcribeFormSubmit">
-                            <fieldset class="form-fieldset">
-                                <input type="hidden" name="action" value="subscribe">
-                                <input type="hidden" name="nl_first_name" value="bc">
-                                <input type="hidden" name="check" value="1">
-                                <div class="form-inline">
-                                    <div class="form-group">
-                                        <input class="form-input" id="nl_email_newsletter" name="nl_email" type="email" placeholder="Your email address">
+                            <form class="form " action="https://sb-clickboom.mybigcommerce.com/subscribe.php" method="post" id="popupSubcribeFormSubmit">
+                                <fieldset class="form-fieldset">
+                                    <input type="hidden" name="action" value="subscribe">
+                                    <input type="hidden" name="nl_first_name" value="bc">
+                                    <input type="hidden" name="check" value="1">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <input class="form-input" id="nl_email_newsletter" name="nl_email" type="email" placeholder="Your email address">
+                                        </div>
+                                        <input class="button button--action" type="submit" value="Subscribe">
                                     </div>
-                                    <input class="button button--action" type="submit" value="Subscribe">
-                                </div>
-                            </fieldset>
-                        </form>
-                        <label class="hidden-popup">
-                            <input type="checkbox" value="1" name="hidden-popup">
-                            <span class="inline">Don&#x27;t show this popup again</span>
-                        </label>
-                    </div>
-                    <div data-role="sharesArea">
+                                </fieldset>
+                            </form>
+                            <label class="hidden-popup">
+                                <input type="checkbox" value="1" name="hidden-popup">
+                                <span class="inline">Don&#x27;t show this popup again</span>
+                            </label>
+                        </div>
+                        <div data-role="sharesArea">
 
-                        <h5 class="footer-info-heading hidden 123">Follow us</h5>
-                        <ul class="socialLinks socialLinks--alt">
-                            <li class="socialLinks-item">
-                                <a class="icon icon--facebook" href="https://www.facebook.com/SmartAddons.page" target="_blank">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li class="socialLinks-item">
-                                <a class="icon icon--twitter" href="https://twitter.com/smartaddons" target="_blank">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="socialLinks-item">
-                                <a class="icon icon--instagram" href="https://www.instagram.com/magentech8888/" target="_blank">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li class="socialLinks-item">
-                                <a class="icon icon--pinterest" href="https://www.pinterest.com/smartaddons/" target="_blank">
-                                    <i class="fa fa-pinterest"></i>
-                                </a>
-                            </li>
-                        </ul>
+                            <h5 class="footer-info-heading hidden 123">Follow us</h5>
+                            <ul class="socialLinks socialLinks--alt">
+                                <li class="socialLinks-item">
+                                    <a class="icon icon--facebook" href="https://www.facebook.com/SmartAddons.page" target="_blank">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="socialLinks-item">
+                                    <a class="icon icon--twitter" href="https://twitter.com/smartaddons" target="_blank">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="socialLinks-item">
+                                    <a class="icon icon--instagram" href="https://www.instagram.com/magentech8888/" target="_blank">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="socialLinks-item">
+                                    <a class="icon icon--pinterest" href="https://www.pinterest.com/smartaddons/" target="_blank">
+                                        <i class="fa fa-pinterest"></i>
+                                    </a>
+                                </li>
+                            </ul>
 
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-    </div>*@
+            </div>
+        </div>*@
 
 
 

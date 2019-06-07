@@ -1942,6 +1942,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\MainMenu.cshtml" />
     <Content Include="Views\Shared\MainCategory.cshtml" />
+    <Content Include="Views\Shared\TopMenuRight.cshtml" />
+    <Content Include="Views\Shared\TopMenuLeft.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
