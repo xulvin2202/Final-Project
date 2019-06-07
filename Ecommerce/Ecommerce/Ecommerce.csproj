@@ -1722,8 +1722,8 @@
     <Content Include="Assets\Client\TemplateUI\ClickBoom\cdn11.bigcommerce.com\s-5jeysafj8q\products\97\images\392\13__59342.1542788388.386.5134847.jpg" />
     <Content Include="Assets\Client\TemplateUI\ClickBoom\cdn11.bigcommerce.com\s-5jeysafj8q\products\98\images\388\5__34411.1542788343.386.5134847.jpg" />
     <Content Include="Assets\Client\TemplateUI\ClickBoom\cdn11.bigcommerce.com\s-5jeysafj8q\product_images\logo_1544415020__65511.png" />
-    <Content Include="Assets\Client\TemplateUI\ClickBoom\cdn11.bigcommerce.com\s-5jeysafj8q\product_images\theme_images\Image_Slider_011de9.png" />
     <Content Include="Assets\Client\TemplateUI\ClickBoom\cdn11.bigcommerce.com\s-5jeysafj8q\product_images\theme_images\Image_Slider_021de9.jpg" />
+    <Content Include="Assets\Client\TemplateUI\ClickBoom\cdn11.bigcommerce.com\s-5jeysafj8q\product_images\theme_images\it.png" />
     <Content Include="Assets\Client\TemplateUI\ClickBoom\cdn11.bigcommerce.com\s-5jeysafj8q\product_images\uploaded_images\11003564836-2ee636a5f5-b.jpg" />
     <Content Include="Assets\Client\TemplateUI\ClickBoom\cdn11.bigcommerce.com\s-5jeysafj8q\product_images\uploaded_images\bottom-1-30432.jpg" />
     <Content Include="Assets\Client\TemplateUI\ClickBoom\cdn11.bigcommerce.com\s-5jeysafj8q\product_images\uploaded_images\brand1.jpg" />
@@ -1941,6 +1941,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\MainMenu.cshtml" />
+    <Content Include="Views\Shared\MainCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

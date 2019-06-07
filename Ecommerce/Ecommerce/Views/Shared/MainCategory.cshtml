@@ -1,0 +1,159 @@
+﻿@model List<Model.EF.MainCategory>
+<ul class="navPages-list navPages-list--categories">
+    @foreach (var item in Model)
+    {
+        <li class="navPages-item ">
+            <a class="navPages-action has-subMenu" href="collections/index.html">
+                <i class="@(string.IsNullOrEmpty(item.Icon)?"fa fa-female":item.Icon)"></i>
+                @item.Name
+                <span class=" has-subMenu" data-collapsible="navPages-vertical-23">
+                    <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                </span>
+
+            </a>
+
+        </li>
+    }
+</ul>
+<div class="navPage-subMenu subMenu--mega" id="navPages-vertical-23" aria-hidden="true" tabindex="-1">
+    <div class="row">
+        <div class="col-lg-8">
+
+            <ul class="navPage-subMenu-list grid-2">
+                <li class="navPage-subMenu-item">
+                    <a class="navPage-subMenu-action navPages-action has-subMenu"
+                       href="smartphone/electronic/index.html">
+                        Electronic
+
+                        <span class=" has-subMenu"
+                              data-collapsible="navPages-vertical-24"
+                              data-collapsible-disabled-breakpoint="medium"
+                              data-collapsible-disabled-state="open"
+                              data-collapsible-enabled-state="closed">
+                            <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                        </span>
+
+                    </a>
+                    <ul class="navPage-childList" id="navPages-vertical-24">
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/electronic/fans/index.html">Fans</a>
+                        </li>
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/electronic/headphone/index.html">Headphone</a>
+                        </li>
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/electronic/smartphone/index.html">Smartphone</a>
+                        </li>
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/electronic/tv/index.html">TV</a>
+                        </li>
+
+                    </ul>
+
+                </li>
+                <li class="navPage-subMenu-item">
+                    <a class="navPage-subMenu-action navPages-action has-subMenu"
+                       href="smartphone/game-box/index.html">
+                        Game box
+
+                        <span class=" has-subMenu"
+                              data-collapsible="navPages-vertical-26"
+                              data-collapsible-disabled-breakpoint="medium"
+                              data-collapsible-disabled-state="open"
+                              data-collapsible-enabled-state="closed">
+                            <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                        </span>
+
+                    </a>
+                    <ul class="navPage-childList" id="navPages-vertical-26">
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/game-box/accessories/index.html">Accessories</a>
+                        </li>
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/game-box/microsoft/index.html">Microsoft</a>
+                        </li>
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/game-box/nvidia/index.html">Nvidia</a>
+                        </li>
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/game-box/sony/index.html">Sony</a>
+                        </li>
+
+                    </ul>
+
+                </li>
+                <li class="navPage-subMenu-item">
+                    <a class="navPage-subMenu-action navPages-action has-subMenu"
+                       href="collections/headphone/index.html">
+                        Headphone
+
+                        <span class=" has-subMenu"
+                              data-collapsible="navPages-vertical-27"
+                              data-collapsible-disabled-breakpoint="medium"
+                              data-collapsible-disabled-state="open"
+                              data-collapsible-enabled-state="closed">
+                            <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                        </span>
+
+                    </a>
+                    <ul class="navPage-childList" id="navPages-vertical-27">
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/headphone/apple/index.html">Apple</a>
+                        </li>
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/headphone/beats-audio/index.html">Beats Audio</a>
+                        </li>
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/headphone/microlab/index.html">Microlab</a>
+                        </li>
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/headphone/sony-walkman/index.html">Sony walkman</a>
+                        </li>
+
+                    </ul>
+
+                </li>
+                <li class="navPage-subMenu-item">
+                    <a class="navPage-subMenu-action navPages-action has-subMenu"
+                       href="smartphone/camera/index.html">
+                        Camera
+
+                        <span class=" has-subMenu"
+                              data-collapsible="navPages-vertical-25"
+                              data-collapsible-disabled-breakpoint="medium"
+                              data-collapsible-disabled-state="open"
+                              data-collapsible-enabled-state="closed">
+                            <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                        </span>
+
+                    </a>
+                    <ul class="navPage-childList" id="navPages-vertical-25">
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/camera/accessories/index.html">Accessories</a>
+                        </li>
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/camera/cannon/index.html">Cannon</a>
+                        </li>
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/camera/lg/index.html">LG</a>
+                        </li>
+                        <li class="navPage-childList-item">
+                            <a class="navPage-childList-action navPages-action" href="smartphone/camera/nikon/index.html">Nikon</a>
+                        </li>
+
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="banners">
+                <div>
+                    <a href="#"><img data-sizes="auto" class="img-fluid lazyload" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/content/home2/banners/vertical2.png" alt="banner"></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

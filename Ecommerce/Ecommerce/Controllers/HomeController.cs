@@ -19,5 +19,10 @@ namespace Ecommerce.Controllers
             var model = new EcommerceDao().ListByGroupId(1);
             return PartialView(model);
         }
+        public ActionResult MainCategory()
+        {
+            var model = new EcommerceDao().ListAllMainCategory();
+            return PartialView(model);
+        }
     }
 }

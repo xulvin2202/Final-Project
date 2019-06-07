@@ -32,7 +32,11 @@ namespace Model.Dao
         }
         public List<Menu> ListByGroupId(int groupId)
         {
-            return db.Menus.Where(x => x.TypeID == groupId).ToList();
+            return db.Menus.Where(x => x.TypeID == groupId && x.Status == true).OrderBy(x => x.DisplayOrder).ToList();
+        }
+        public List<MainCategory> ListAllMainCategory()
+        {
+            return db.MainCategories.Where(x => x.Status == true).ToList();
         }
     }
 }
