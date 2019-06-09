@@ -6,7 +6,8 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Content_Tag
+    [Table("ContentTag")]
+    public partial class ContentTag
     {
         [Key]
         [Column(Order = 0)]

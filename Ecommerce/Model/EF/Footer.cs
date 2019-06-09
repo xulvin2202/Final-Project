@@ -12,8 +12,8 @@ namespace Model.EF
         [StringLength(50)]
         public string ID { get; set; }
 
-        [Column(TypeName = "ntext")]
-        public string Content { get; set; }
+        [Column(TypeName = "text")]
+        public string Text { get; set; }
 
         public bool? Status { get; set; }
     }

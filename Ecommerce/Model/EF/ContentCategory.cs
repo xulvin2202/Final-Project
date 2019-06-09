@@ -6,19 +6,13 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("MainCategory")]
-    public partial class MainCategory
+    [Table("ContentCategory")]
+    public partial class ContentCategory
     {
         public long ID { get; set; }
 
         [StringLength(250)]
         public string Name { get; set; }
-
-        [StringLength(50)]
-        public string Icon { get; set; }
-
-        [StringLength(50)]
-        public string Image { get; set; }
 
         [StringLength(250)]
         public string MetaTitle { get; set; }

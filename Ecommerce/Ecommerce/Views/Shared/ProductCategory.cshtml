@@ -1,0 +1,50 @@
+﻿@model List<Model.EF.Category>
+
+
+
+<ul class="navPages-list navPages-list--categories">
+    @foreach (var item in Model.Where(x => x.ParentID == null))
+    {
+        var submenu = Model.Where(x => x.ParentID == item.ID);
+        //var parentClass = submenu.Count() > 0 ? "class=navPages-action has-subMen'":"";
+        <li class="navPages-item ">
+            <a class=navPages-action has-subMen href="/san-pham/@item.MetaTitle-@item.ID">
+                <i class="@(string.IsNullOrEmpty(item.Icon)?"fa fa-female":item.Icon)"></i>
+                @item.Name
+                <span class=" has-subMenu" data-collapsible="navPages-vertical-23">
+                    <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                </span>
+
+            </a>
+            <div class="navPage-subMenu subMenu--mega" id="navPages-vertical-23" aria-hidden="true" tabindex="-1">
+                <div class="row">
+                    <div class="col-lg-8">
+                        @if (submenu.Count() > 0)
+                        {
+                            <ul class="navPage-subMenu-list grid-2">
+                                @foreach (var child in submenu)
+                                {
+                                    <li class="navPage-subMenu-item">
+                                        <ul class="navPage-childList" id="navPages-vertical-24">
+                                            <li class="navPage-childList-item">
+                                                <a class="navPage-childList-action navPages-action" href="/san-pham/@child.MetaTitle-@child.ID">@child.Name</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="banners">
+                            <div>
+                                <a href="/san-pham/@item.MetaTitle-@item.ID"><img data-sizes="auto" class="img-fluid lazyload" src="@item.Image" alt="banner"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+    }
+</ul>

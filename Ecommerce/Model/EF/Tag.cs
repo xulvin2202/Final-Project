@@ -9,8 +9,7 @@ namespace Model.EF
     [Table("Tag")]
     public partial class Tag
     {
-        [StringLength(50)]
-        public string ID { get; set; }
+        public long ID { get; set; }
 
         [StringLength(50)]
         public string Name { get; set; }

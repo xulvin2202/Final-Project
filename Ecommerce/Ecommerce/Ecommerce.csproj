@@ -166,6 +166,7 @@
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1550,6 +1551,7 @@
     <Content Include="Assets\Admin\oculux\puffintheme.com\demo\oculux\jobportal\it.ico" />
     <Content Include="Assets\Client\TemplateUI\backblue.gif" />
     <Content Include="Assets\Client\TemplateUI\ClickBoom\backblue.gif" />
+    <Content Include="Assets\Client\TemplateUI\ClickBoom\cdn11.bigcommerce.com\r-6fbcb23fc6f57fe4b63f62d66e95155a1ce6b177\javascript\jquery-3.1.1.min.js" />
     <Content Include="Assets\Client\TemplateUI\ClickBoom\cdn11.bigcommerce.com\r-6fbcb23fc6f57fe4b63f62d66e95155a1ce6b177\javascript\visitor_stencil.js" />
     <Content Include="Assets\Client\TemplateUI\ClickBoom\cdn11.bigcommerce.com\s-5jeysafj8q\content\home1\banners\custom_banner1.png" />
     <Content Include="Assets\Client\TemplateUI\ClickBoom\cdn11.bigcommerce.com\s-5jeysafj8q\content\home1\banners\custom_banner2.png" />
@@ -1930,6 +1932,7 @@
     <Content Include="Scripts\owl.carousel.rtl.html" />
     <Content Include="Scripts\revolution-extension.js" />
     <Content Include="Scripts\revolution-slider.js" />
+    <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1941,10 +1944,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\MainMenu.cshtml" />
-    <Content Include="Views\Shared\MainCategory.cshtml" />
+    <Content Include="Views\Shared\ProductCategory.cshtml" />
     <Content Include="Views\Shared\TopMenuRight.cshtml" />
     <Content Include="Views\Shared\TopMenuLeft.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Product\Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

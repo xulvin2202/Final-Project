@@ -6,6 +6,7 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [Table("MenuType")]
     public partial class MenuType
     {
         public int ID { get; set; }

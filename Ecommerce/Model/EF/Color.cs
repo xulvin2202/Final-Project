@@ -14,6 +14,8 @@ namespace Model.EF
         [StringLength(50)]
         public string Name { get; set; }
 
+        public long? ParentID { get; set; }
+
         public bool? Status { get; set; }
 
         public DateTime? CreateDate { get; set; }

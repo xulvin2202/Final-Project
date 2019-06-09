@@ -19,22 +19,18 @@ namespace Model.EF
         public virtual DbSet<Color> Colors { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Content> Contents { get; set; }
-        public virtual DbSet<Content_Category> Content_Category { get; set; }
-        public virtual DbSet<Content_Tag> Content_Tag { get; set; }
+        public virtual DbSet<ContentCategory> ContentCategories { get; set; }
+        public virtual DbSet<ContentTag> ContentTags { get; set; }
         public virtual DbSet<Footer> Footers { get; set; }
         public virtual DbSet<Madein> Madeins { get; set; }
-        public virtual DbSet<MainCategory> MainCategories { get; set; }
         public virtual DbSet<Material> Materials { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
-        public virtual DbSet<MenuType> MenuType { get; set; }
-        public virtual DbSet<Position_Poster> Position_Poster { get; set; }
+        public virtual DbSet<MenuType> MenuTypes { get; set; }
         public virtual DbSet<Poster> Posters { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Product_Attribute> Product_Attribute { get; set; }
+        public virtual DbSet<Product_Attribute> Product_Attributes { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Slide> Slides { get; set; }
-        public virtual DbSet<Sub_Category_Attribute> Sub_Category_Attribute { get; set; }
-        public virtual DbSet<SubCategory> SubCategories { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
@@ -72,11 +68,6 @@ namespace Model.EF
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Category>()
-                .HasMany(e => e.Products)
-                .WithOptional(e => e.Category)
-                .HasForeignKey(e => e.Category_ID);
-
             modelBuilder.Entity<Color>()
                 .Property(e => e.CreateBy)
                 .IsUnicode(false);
@@ -105,28 +96,28 @@ namespace Model.EF
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Content_Category>()
+            modelBuilder.Entity<ContentCategory>()
                 .Property(e => e.MetaTitle)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Content_Category>()
+            modelBuilder.Entity<ContentCategory>()
                 .Property(e => e.CreateBy)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Content_Category>()
+            modelBuilder.Entity<ContentCategory>()
                 .Property(e => e.ModifiedBy)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Content_Category>()
+            modelBuilder.Entity<ContentCategory>()
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Content_Tag>()
+            modelBuilder.Entity<ContentTag>()
                 .Property(e => e.TagID)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Footer>()
-                .Property(e => e.ID)
+                .Property(e => e.Text)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Madein>()
@@ -140,24 +131,6 @@ namespace Model.EF
             modelBuilder.Entity<Madein>()
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
-
-            modelBuilder.Entity<MainCategory>()
-                .Property(e => e.MetaTitle)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<MainCategory>()
-                .Property(e => e.CreateBy)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<MainCategory>()
-                .Property(e => e.ModifiedBy)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<MainCategory>()
-                .Property(e => e.MetaDescriptions)
-                .IsFixedLength();
-
-          
 
             modelBuilder.Entity<Product>()
                 .Property(e => e.Code)
@@ -217,42 +190,6 @@ namespace Model.EF
 
             modelBuilder.Entity<Slide>()
                 .Property(e => e.ModifiedBy)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Sub_Category_Attribute>()
-                .Property(e => e.MetaTitle)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Sub_Category_Attribute>()
-                .Property(e => e.CreateBy)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Sub_Category_Attribute>()
-                .Property(e => e.ModifiedBy)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Sub_Category_Attribute>()
-                .Property(e => e.MetaDescriptions)
-                .IsFixedLength();
-
-            modelBuilder.Entity<SubCategory>()
-                .Property(e => e.MetaTitle)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<SubCategory>()
-                .Property(e => e.CreateBy)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<SubCategory>()
-                .Property(e => e.ModifiedBy)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<SubCategory>()
-                .Property(e => e.MetaDescriptions)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Tag>()
-                .Property(e => e.ID)
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()

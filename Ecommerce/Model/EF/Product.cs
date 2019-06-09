@@ -74,12 +74,8 @@ namespace Model.EF
 
         public long? Category_ID { get; set; }
 
-        public long? SubCategory_ID { get; set; }
-
         public long? Material_ID { get; set; }
-        
-        public long? Tag_ID { get; set; }
 
-        public virtual Category Category { get; set; }
+        public long? Tag_ID { get; set; }
     }
 }

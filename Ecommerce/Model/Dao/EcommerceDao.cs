@@ -14,29 +14,52 @@ namespace Model.Dao
         {
             db = new EcommerceDbContext();
         }
-        public List<Content_Category> ListAllContent()
+        public List<Slide> ListSlide()
         {
-            return db.Content_Category.Where(x => x.Status == true).ToList();
+            return db.Slides.Where(x => x.Status == true).OrderBy(x => x.DisplayOrder).ToList();
+        }
+        public List<ContentCategory> ListAllContent()
+        {
+            return db.ContentCategories.Where(x => x.Status == true).ToList();
         }
         public Content GetByID(long id)
         {
             return db.Contents.Find(id);
         }
-        public List<Category> ListAllCategory()
-        {
-            return db.Categories.Where(x => x.Status == true).ToList();
-        }
-        public List<SubCategory> ListAllSubCategory()
-        {
-            return db.SubCategories.Where(x => x.Status == true).ToList();
-        }
+        //public List<Category> ListAllCategory()
+        //{
+        //    return db.Categories.Where(x => x.Status == true).ToList();
+        //}
+        
         public List<Menu> ListByGroupId(int groupId)
         {
-            return db.Menus.Where(x => x.TypeID == groupId && x.Status == true).OrderBy(x => x.DisplayOrder).ToList();
+            return db.Menus.Where(x => x.MenuType_ID == groupId && x.Status == true).OrderBy(x => x.DisplayOrder).ToList();
         }
-        public List<MainCategory> ListAllMainCategory()
+        public List<Category> ListAllCategory()
         {
-            return db.MainCategories.Where(x => x.Status == true).ToList();
+            return db.Categories.Where(x => x.Status == true).OrderBy(x=>x.DisplayOrder).ToList();
         }
+        public Footer GetFooter()
+        {
+            return db.Footers.SingleOrDefault(x => x.Status == true);
+        }
+        public List<Product> ListNewProduct(int top)
+        {
+            return db.Products.OrderByDescending(x => x.CreateDate).Take(top).ToList();
+        }
+        public List<Product> ListFeatureProduct(int top)
+        {
+            return db.Products.Where(x => x.TopHot != null && x.TopHot > DateTime.Now).OrderByDescending(x => x.CreateDate).Take(top).ToList();
+        }
+        public List<Product> ListRelatedProducts(long productID)
+        {
+            var product = db.Products.Find(productID);
+            return db.Products.Where(x => x.ID != productID && x.Category_ID == product.Category_ID).ToList();
+        }
+        public Product ViewDetail(long id)
+        {
+            return db.Products.Find(id);
+        }
+
     }
 }

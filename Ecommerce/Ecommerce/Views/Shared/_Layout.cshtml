@@ -31,7 +31,8 @@
         function beacon_deferred(beacon_api) { beacon_api.pageview({ "isNew": 1, "initiator": { "id": "", "session_id": "b157f547156e9815f310954844f33ce0b9525d0c", "type": "ANONYMOUS", "visit_id": "d739fd8f-983f-47e1-98a3-3387fe004637", "visitor_id": "d8fa61ca-a4b3-4499-92bd-357350812d42" }, "referer": { "url": "" }, "request": { "url": "https:\/\/sb-clickboom.mybigcommerce.com\/" } }, []); }
     </script>
     <script type="text/javascript">
-        (function () { var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0]; g.type = 'text/javascript'; g.defer = true; g.src = '../cdn11.bigcommerce.com/shared/js/beacon_api-d53f0a39a11dacaa85063ca4f4aba159a609185d.js'; s.parentNode.insertBefore(g, s); })();
+    (function () {
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0]; g.type = 'text/javascript'; g.defer = true; g.src = '~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/shared/js/beacon_api-d53f0a39a11dacaa85063ca4f4aba159a609185d.js'; s.parentNode.insertBefore(g, s); })();
     </script>
     <script type="text/javascript">
         var BCData = { "csrf_token": "52490f3f7fbd35c5de01153e7610a6286d5a34dd57e90f9dc131c27a016fdaaa" };
@@ -965,11 +966,11 @@
                             @{ Html.RenderAction("TopMenuLeft", "Home");}
                         </div>
                         <div class="col-xl-6 col-lg-6 col-sm-12 col-right">
-                           @{ Html.RenderAction("TopMenuRight", "Home");}
+                            @{ Html.RenderAction("TopMenuRight", "Home");}
                         </div>
                     </div>
-                    </div>
                 </div>
+            </div>
         </div>
         <div class="stickey-header" data-sticky-header>
             <div class="header-center">
@@ -1044,7 +1045,7 @@
 
                             <div class="verticalCategories  " id="verticalCategories" aria-hidden="true" tabindex="-1">
                                 <span class="mobileMenu-close fa fa-times"></span>
-                                @{ Html.RenderAction("MainCategory", "Home");}
+                                @{Html.RenderAction("ProductCategory", "Product");}
                             </div>
                         </div>
 
@@ -1135,136 +1136,7 @@
         <section class="footer-center ">
             <div class="footer-center__first">
                 <div class="container">
-                    <div class="row">
-                        <article class="col-xl-4 col-lg-4 footer-info collapsed-block" data-section-type="storeInfo">
-                            <div class="widget-inner">
-                                <h5 class="footer-info-heading">
-                                    Contact Us
-                                    <span class="expander"><i class="fa fa-chevron-circle-down"></i></span>
-                                </h5>
-                                <div class="footer-info-list address-footer">
-                                    <div><i class="fa fa-map-marker fa-lg"></i><span>1702 Los Angeles, California, American.</span></div>
-                                    <div><i class="fa fa-mobile fa-lg"></i>0-943-446-000</div>
-                                    <div><i class="fa fa-envelope"></i><a href="mailto:contact@revo.com"></a>contact@revo.com</div>
-                                    <div class=" module sb-banner social-bottom">
-                                        <div class="block-content clearfix shop-social">
-                                            <ul>
-                                                <li class="navUser-item li-social facebook-social">
-                                                    <a title="facebook" href="https://www.facebook.com/SmartAddons.page" target="_blank">
-                                                        <span class="fa fa-facebook icon-social"></span>
-                                                    </a>
-                                                </li>
-                                                <li class="navUser-item li-social twitter-social">
-                                                    <a title="twitter" href="https://twitter.com/smartaddons" target="_blank">
-                                                        <span class="fa fa-twitter icon-social"></span>
-                                                    </a>
-                                                </li>
-                                                <li class="navUser-item li-social instagram-social">
-                                                    <a title="instagram" href="https://www.instagram.com/magentech8888/" target="_blank">
-                                                        <span class="fa fa-instagram icon-social"></span>
-                                                    </a>
-                                                </li>
-                                                <li class="navUser-item li-social pinterest-social">
-                                                    <a title="pinterest" href="https://www.pinterest.com/smartaddons/" target="_blank">
-                                                        <span class="fa fa-pinterest icon-social"></span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <div class="col-xl-8 col-lg-8">
-                            <div class="row">
-                                <article class="collapsed-block col-xl-4 col-lg-4 " data-section-type="footer-webPages">
-                                    <div class="widget-inner">
-                                        <h5 class="footer-info-heading">
-                                            ABOUT
-                                            <span class="expander"><i class="fa fa-chevron-circle-down"></i></span>
-                                        </h5>
-
-                                        <ul class="footer-info-list">
-
-                                            <li class="list-item">
-
-                                                <a href="#">About Us</a>
-                                            </li>
-
-                                            <li class="list-item">
-
-                                                <a href="#">Corporate Responsibility</a>
-                                            </li>
-
-                                            <li class="list-item">
-
-                                                <a href="#">Investor Relations</a>
-                                            </li>
-
-                                            <li class="list-item">
-
-                                                <a href="#">Careers</a>
-                                            </li>
-
-                                            <li class="list-item">
-
-                                                <a href="#">Services</a>
-                                            </li>
-
-                                            <li class="list-item">
-
-                                                <a href=" ">Ideas &amp; How-To&#x27;s</a>
-                                            </li>
-
-
-
-                                        </ul>
-                                    </div>
-                                </article>
-
-                                <article class="col-xl-4 col-lg-4 collapsed-block" data-section-type="footer-webPages">
-                                    <div class="widget-inner">
-                                        <h5 class="footer-info-heading">
-                                            INFORMATION
-                                            <span class="expander"><i class="fa fa-chevron-circle-down"></i></span>
-                                        </h5>
-                                        <ul class="footer-info-list">
-                                            <li>
-                                                <a href="brand/index.html">Brand</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog/index.html">Blog</a>
-                                            </li>
-                                            <li>
-                                                <a href="pages/index.html">Pages</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </article>
-
-                                <article class="col-xl-4 col-lg-4 collapsed-block" data-section-type="footer-brands">
-                                    <div class="widget-inner">
-                                        <h5 class="footer-info-heading">
-                                            BRANDS
-                                            <span class="expander"><i class="fa fa-chevron-circle-down"></i></span>
-                                        </h5>
-                                        <ul class="footer-info-list">
-                                            <li>
-                                                <a href="brands/ofs/index.html">OFS</a>
-                                            </li>
-                                            <li>
-                                                <a href="brands/common-good/index.html">Common Good</a>
-                                            </li>
-                                            <li>
-                                                <a href="brands/sagaform/index.html">Sagaform</a>
-                                            </li>
-                                            <li><a href="brands/index.html"><strong>View All</strong></a></li>
-                                        </ul>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
+                    @{ Html.RenderAction("Footer", "Home");}
                 </div>
             </div>
 
@@ -1563,7 +1435,7 @@
 
     <script>window.__webpack_public_path__ = "https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/dist/";</script>
     <script src="~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/dist/theme-bundle.main.js"></script>
-
+    
 
     <script defer src="~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/modernizr-custom.js"></script>
     <script>
@@ -1651,6 +1523,7 @@
 
     <script type="text/javascript" src="~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/r-6fbcb23fc6f57fe4b63f62d66e95155a1ce6b177/javascript/visitor_stencil.js"></script>
     <!-- snippet location footer -->
+    <script src="~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/r-6fbcb23fc6f57fe4b63f62d66e95155a1ce6b177/javascript/jquery-3.1.1.min.js" crossorigin="anonymous">></script>
 </body>
 
 <!-- Mirrored from sb-clickboom.mybigcommerce.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Jun 2019 01:37:47 GMT -->

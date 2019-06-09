@@ -13,6 +13,25 @@ namespace Ecommerce
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            
+            routes.MapRoute(
+                name: "Category Product",
+                url: "san-pham/{metatitle}-{id}",
+                defaults: new { controller = "Product", action = "ProductCategory", id = UrlParameter.Optional },
+                namespaces: new[] { "Ecommerce.Controllers" }
+            );
+            routes.MapRoute(
+                name: "Product Detail",
+                url: "chi-tiet/{metatitle}-{id}",
+                defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional },
+                namespaces: new[] { "Ecommerce.Controllers" }
+            );
+            routes.MapRoute(
+                name: "About",
+                url: "gioi-thieu",
+                defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "Ecommerce.Controllers" }
+            );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

@@ -27,7 +27,6 @@ namespace Model.EF
 
         public bool? Status { get; set; }
 
-        
-        public int? TypeID { get; set; }
+        public int? MenuType_ID { get; set; }
     }
 }

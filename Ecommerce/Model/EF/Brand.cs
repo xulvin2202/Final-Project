@@ -14,6 +14,8 @@ namespace Model.EF
         [StringLength(250)]
         public string Name { get; set; }
 
+        public long? ParentID { get; set; }
+
         public long? Product_Category_ID { get; set; }
 
         public long? MainCategory_ID { get; set; }
