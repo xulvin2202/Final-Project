@@ -22,26 +22,24 @@ namespace Model.Dao
         {
             return db.ContentCategories.Where(x => x.Status == true).ToList();
         }
+
         public Content GetByID(long id)
         {
             return db.Contents.Find(id);
         }
-        //public List<Category> ListAllCategory()
-        //{
-        //    return db.Categories.Where(x => x.Status == true).ToList();
-        //}
-        
+        public List<Category> ListAllCategory()
+        {
+            return db.Categories.Where(x => x.Status == true).ToList();
+        }
+
         public List<Menu> ListByGroupId(int groupId)
         {
             return db.Menus.Where(x => x.MenuType_ID == groupId && x.Status == true).OrderBy(x => x.DisplayOrder).ToList();
         }
-        public List<Category> ListAllCategory()
+        
+        public List<Footer> ListFooterByGroupId(int groupId)
         {
-            return db.Categories.Where(x => x.Status == true).OrderBy(x=>x.DisplayOrder).ToList();
-        }
-        public Footer GetFooter()
-        {
-            return db.Footers.SingleOrDefault(x => x.Status == true);
+            return db.Footers.Where(x => x.FooterType_ID == groupId && x.Status == true).OrderBy(x => x.DisplayOrder).ToList();
         }
         public List<Product> ListNewProduct(int top)
         {
@@ -50,6 +48,14 @@ namespace Model.Dao
         public List<Product> ListFeatureProduct(int top)
         {
             return db.Products.Where(x => x.TopHot != null && x.TopHot > DateTime.Now).OrderByDescending(x => x.CreateDate).Take(top).ToList();
+        }
+        public List<Product> ListSaleProduct(int top)
+        {
+            return db.Products.OrderBy(x => x.PromotionPrice).Take(top).ToList();
+        }
+        public List<Brand> ListBrand(int brand)
+        {
+            return db.Brands.OrderBy(x => x.CreateDate).Take(brand).ToList();
         }
         public List<Product> ListRelatedProducts(long productID)
         {
@@ -60,6 +66,8 @@ namespace Model.Dao
         {
             return db.Products.Find(id);
         }
+        
+        
 
     }
 }

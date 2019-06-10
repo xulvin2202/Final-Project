@@ -14,7 +14,17 @@ namespace Model.EF
         [StringLength(250)]
         public string Name { get; set; }
 
+        [StringLength(250)]
+        public string Image { get; set; }
+
+        [StringLength(550)]
+        public string Link { get; set; }
+
+        public DateTime? CreateDate { get; set; }
+
         public long? ParentID { get; set; }
+
+        public bool? Status { get; set; }
 
         public long? Product_Category_ID { get; set; }
 

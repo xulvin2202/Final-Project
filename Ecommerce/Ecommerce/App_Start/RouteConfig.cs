@@ -16,8 +16,8 @@ namespace Ecommerce
             
             routes.MapRoute(
                 name: "Category Product",
-                url: "san-pham/{metatitle}-{id}",
-                defaults: new { controller = "Product", action = "ProductCategory", id = UrlParameter.Optional },
+                url: "san-pham/{metatitle}-{cateid}",
+                defaults: new { controller = "Product", action = "Category", id = UrlParameter.Optional },
                 namespaces: new[] { "Ecommerce.Controllers" }
             );
             routes.MapRoute(

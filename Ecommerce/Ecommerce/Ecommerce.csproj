@@ -1947,8 +1947,9 @@
     <Content Include="Views\Shared\ProductCategory.cshtml" />
     <Content Include="Views\Shared\TopMenuRight.cshtml" />
     <Content Include="Views\Shared\TopMenuLeft.cshtml" />
-    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\FooterTop.cshtml" />
     <Content Include="Views\Product\Category.cshtml" />
+    <Content Include="Views\Shared\FooterBottom.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

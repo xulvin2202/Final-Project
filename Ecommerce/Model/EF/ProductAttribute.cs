@@ -6,7 +6,8 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Product_Attribute
+    [Table("ProductAttribute")]
+    public partial class ProductAttribute
     {
         public long ID { get; set; }
 

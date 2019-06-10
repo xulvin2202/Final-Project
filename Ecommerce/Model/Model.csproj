@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\CategoryDao.cs" />
     <Compile Include="Dao\EcommerceDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="EF\About.cs" />
@@ -69,13 +70,14 @@
     <Compile Include="EF\ContentTag.cs" />
     <Compile Include="EF\EcommerceDbContext.cs" />
     <Compile Include="EF\Footer.cs" />
+    <Compile Include="EF\FooterType.cs" />
     <Compile Include="EF\Madein.cs" />
     <Compile Include="EF\Material.cs" />
     <Compile Include="EF\Menu.cs" />
     <Compile Include="EF\MenuType.cs" />
     <Compile Include="EF\Poster.cs" />
     <Compile Include="EF\Product.cs" />
-    <Compile Include="EF\Product_Attribute.cs" />
+    <Compile Include="EF\ProductAttribute.cs" />
     <Compile Include="EF\Review.cs" />
     <Compile Include="EF\Slide.cs" />
     <Compile Include="EF\Tag.cs" />

@@ -14,8 +14,10 @@ namespace Ecommerce.Controllers
         {
             var model = new EcommerceDao().ListSlide();
             var product = new EcommerceDao();
-            ViewBag.NewProduct = product.ListNewProduct(10);
-            ViewBag.FeatureProduct = product.ListFeatureProduct(10);
+            ViewBag.NewProduct = product.ListNewProduct(8);
+            ViewBag.FeatureProduct = product.ListFeatureProduct(8);
+            ViewBag.SaleProduct = product.ListSaleProduct(4);
+            ViewBag.Brand = product.ListBrand(12);
             return View(model);
         }
         [ChildActionOnly]
@@ -38,9 +40,15 @@ namespace Ecommerce.Controllers
             return PartialView(model);
         }
         [ChildActionOnly]
-        public ActionResult Footer()
+        public ActionResult FooterTop()
         {
-            var model = new EcommerceDao().GetFooter(); 
+            var model = new EcommerceDao().ListFooterByGroupId(1); 
+            return PartialView(model);
+        }
+        [ChildActionOnly]
+        public ActionResult FooterBottom()
+        {
+            var model = new EcommerceDao().ListFooterByGroupId(2);
             return PartialView(model);
         }
 

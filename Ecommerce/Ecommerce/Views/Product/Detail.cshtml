@@ -3,24 +3,25 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var category = (Model.EF.Category)ViewBag.Category;
+
     var relatedproducts = (List<Model.EF.Product>)ViewBag.RelatedProducts;
 }
 <div class="container">
     <div class="sb-breadcrumbs breadcrumb-bg ">
         <div class="entry-header">
             <h3 class="entry-title">
-                1 L Le Parfait Jar
+                @Model.Name
             </h3>
             <ul class="breadcrumb ">
                 <li class="breadcrumb-item ">
                     <i class="fa fa-home"></i>
                     <a href="/" class="breadcrumb-label">
-                        Home
+                        Trang chủ
                     </a>
                 </li>
 
                 <li class="breadcrumb-item ">
-                    <a href="@category.MetaTitle-@category.ID" class="breadcrumb-label">
+                    <a href="/san-pham/@category.MetaTitle-@category.ID" class="breadcrumb-label">
                         @category.Name
                     </a>
                 </li>
@@ -52,12 +53,268 @@
             <aside class="col-xl-3 col-lg-3 page-sidebar sidebar-offcanvas" id="faceted-search-container">
                 <nav>
                     <span id="close-sidebar" class=" fa fa-times"></span>
-
-                    <!-- BEGIN Side All Categories -->
+                    
+                     BEGIN Side All Categories 
                     <div class="module  sidebar--categories">
-                        <h5 class="block-title">Danh mục sản phẩm</h5>
+                        <h5 class="block-title"> All Categories</h5>
                         <div class="block-content clearfix">
-                            @{Html.RenderAction("ProductCategory", "Product");}
+                            
+                                <ul class="navList">
+
+                                    <li class="navList-item">
+                                        <a class="navList-action has-subMenu" href="../collections/index.html"> Collections </a>
+                                        <a class="navList-toggle" data-collapsible="navList-category-23"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+
+                                        <ul class="navList-subMenu-list" id="navList-category-23">
+                                            <li class="navList-subMenu-item">
+                                                <a class="navList-subMenu-action navList-action has-subMenu" href="../smartphone/electronic/index.html" alt="Electronic" title="Electronic">Electronic </a>
+                                                <a class="navList-subMenu-toggle navList-toggle" data-collapsible="navList-category-24"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+                                                <ul class="navList-childList" id="navList-category-24">
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/electronic/fans/index.html">Fans</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/electronic/headphone/index.html">Headphone</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/electronic/smartphone/index.html">Smartphone</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/electronic/tv/index.html">TV</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="navList-subMenu-item">
+                                                <a class="navList-subMenu-action navList-action has-subMenu" href="../smartphone/game-box/index.html" alt="Game box" title="Game box">Game box </a>
+                                                <a class="navList-subMenu-toggle navList-toggle" data-collapsible="navList-category-26"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+                                                <ul class="navList-childList" id="navList-category-26">
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/game-box/accessories/index.html">Accessories</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/game-box/microsoft/index.html">Microsoft</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/game-box/nvidia/index.html">Nvidia</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/game-box/sony/index.html">Sony</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="navList-subMenu-item">
+                                                <a class="navList-subMenu-action navList-action has-subMenu" href="../collections/headphone/index.html" alt="Headphone" title="Headphone">Headphone </a>
+                                                <a class="navList-subMenu-toggle navList-toggle" data-collapsible="navList-category-27"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+                                                <ul class="navList-childList" id="navList-category-27">
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/headphone/apple/index.html">Apple</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/headphone/beats-audio/index.html">Beats Audio</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/headphone/microlab/index.html">Microlab</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/headphone/sony-walkman/index.html">Sony walkman</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="navList-subMenu-item">
+                                                <a class="navList-subMenu-action navList-action has-subMenu" href="../smartphone/camera/index.html" alt="Camera" title="Camera">Camera </a>
+                                                <a class="navList-subMenu-toggle navList-toggle" data-collapsible="navList-category-25"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+                                                <ul class="navList-childList" id="navList-category-25">
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/camera/accessories/index.html">Accessories</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/camera/cannon/index.html">Cannon</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/camera/lg/index.html">LG</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../smartphone/camera/nikon/index.html">Nikon</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="navList-item">
+                                        <a class="navList-action has-subMenu" href="../computer-off/index.html"> Shop </a>
+                                        <a class="navList-toggle" data-collapsible="navList-category-50"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+
+                                        <ul class="navList-subMenu-list" id="navList-category-50">
+                                            <li class="navList-subMenu-item">
+                                                <a class="navList-subMenu-action navList-action has-subMenu" href="../computer-office/computer-components/index.html" alt="Components" title="Components">Components </a>
+                                                <a class="navList-subMenu-toggle navList-toggle" data-collapsible="navList-category-52"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+                                                <ul class="navList-childList" id="navList-category-52">
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../computer-office/computer-components/3d-printers/index.html">3D Printers </a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../computer-office/computer-components/3d-scanners/index.html">3D Scanners</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../computer-office/computer-components/printer-supplies/index.html">Printer Supplies</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../computer-office/computer-components/projectors/index.html">Projectors</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="navList-subMenu-item">
+                                                <a class="navList-subMenu-action navList-action has-subMenu" href="../computer-office/office-electronics/index.html" alt="Office" title="Office">Office </a>
+                                                <a class="navList-subMenu-toggle navList-toggle" data-collapsible="navList-category-51"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+                                                <ul class="navList-childList" id="navList-category-51">
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../computer-office/office-electronics/mouse-keyboards/index.html">Mouse &amp; Keyboards</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../computer-office/office-electronics/usb-gadgets/index.html">USB Gadgets</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../computer-office/office-electronics/usb-hubs/index.html">USB Hubs</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../computer-office/office-electronics/webcams/index.html">Webcams</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="navList-subMenu-item">
+                                                <a class="navList-subMenu-action navList-action has-subMenu" href="../shop/peripherals/index.html" alt="Peripherals" title="Peripherals">Peripherals </a>
+                                                <a class="navList-subMenu-toggle navList-toggle" data-collapsible="navList-category-53"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+                                                <ul class="navList-childList" id="navList-category-53">
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../computer-office/computer-peripherals/cpus/index.html">CPUs</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../computer-office/computer-peripherals/graphics-cards/index.html">Graphics Cards</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../computer-office/computer-peripherals/motherboards/index.html">Motherboards</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../computer-office/computer-peripherals/rams/index.html">RAMs</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="navList-item">
+                                        <a class="navList-action" href="../computer-office/tablets/index.html" alt="Tablets" title="Tablets">Tablets</a>
+                                    </li>
+                                    <li class="navList-item">
+                                        <a class="navList-action" href="../computer-office/tablets/ipad/index.html" alt="iPad" title="iPad">iPad</a>
+                                    </li>
+                                    <li class="navList-item">
+                                        <a class="navList-action" href="../computer-office/tablets/android-tablets/index.html" alt="Android Tablets" title="Android Tablets">Android Tablets</a>
+                                    </li>
+                                    <li class="navList-item">
+                                        <a class="navList-action has-subMenu" href="../home-garden/index.html"> Home &amp; Garden </a>
+                                        <a class="navList-toggle" data-collapsible="navList-category-70"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+
+                                        <ul class="navList-subMenu-list" id="navList-category-70">
+                                            <li class="navList-subMenu-item">
+                                                <a class="navList-subMenu-action navList-action has-subMenu" href="../home-garden/arts-crafts-sewing/index.html" alt="Arts,Crafts &amp; Sewing" title="Arts,Crafts &amp; Sewing">Arts,Crafts &amp; Sewing </a>
+                                                <a class="navList-subMenu-toggle navList-toggle" data-collapsible="navList-category-74"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+                                                <ul class="navList-childList" id="navList-category-74">
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-garden/arts-crafts-sewing/apparel-sewing-fabric/index.html">Apparel Sewing &amp; Fabric</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-garden/arts-crafts-sewing/cross-stitch/index.html">Cross-Stitch</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-garden/arts-crafts-sewing/fabric/index.html">Fabric</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-garden/arts-crafts-sewing/needle-arts-crafts/index.html">Needle Arts &amp; Crafts</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="navList-subMenu-item">
+                                                <a class="navList-subMenu-action navList-action has-subMenu" href="../home-garden/home-textile/index.html" alt="Home Textile" title="Home Textile">Home Textile </a>
+                                                <a class="navList-subMenu-toggle navList-toggle" data-collapsible="navList-category-72"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+                                                <ul class="navList-childList" id="navList-category-72">
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-garden/home-textile/bedding/index.html">Bedding</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-garden/home-textile/curtains/index.html">Curtains</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-garden/home-textile/pillows/index.html">Pillows</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-garden/home-textile/towelstowels/index.html">TowelsTowels</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="navList-subMenu-item">
+                                                <a class="navList-subMenu-action navList-action has-subMenu" href="../home-garden/kitchen-dining-bar/index.html" alt="Kitchen,Dining &amp; Bar" title="Kitchen,Dining &amp; Bar">Kitchen,Dining &amp; Bar </a>
+                                                <a class="navList-subMenu-toggle navList-toggle" data-collapsible="navList-category-71"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+                                                <ul class="navList-childList" id="navList-category-71">
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-garden/kitchen-dining-bar/barware/index.html">Barware</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-garden/kitchen-dining-bar/coffeeware/index.html">Coffeeware</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-garden/kitchen-dining-bar/dinnerware/index.html">Dinnerware</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-garden/kitchen-dining-bar/teaware/index.html">Teaware</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="navList-subMenu-item">
+                                                <a class="navList-subMenu-action navList-action has-subMenu" href="../home-decor/index.html" alt="Home Decor" title="Home Decor">Home Decor </a>
+                                                <a class="navList-subMenu-toggle navList-toggle" data-collapsible="navList-category-73"><i class="icon navList-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
+                                                <ul class="navList-childList" id="navList-category-73">
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-decor/clocks/index.html">Clocks</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-decor/ornaments/index.html">Ornaments</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-decor/photo-albums/index.html">Photo Albums</a>
+                                                    </li>
+                                                    <li class="navList-childList-item">
+                                                        <a class="navList-childList-action navList-action" href="../home-decor/wall-stickers/index.html">Wall Stickers</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="navList-item">
+                                        <a class="navList-action" href="../computer-office/tablets/phone-call-tablets/index.html" alt="Phone Call Tablets" title="Phone Call Tablets">Phone Call Tablets</a>
+                                    </li>
+                                    <li class="navList-item">
+                                        <a class="navList-action" href="../gifts-sport-toys/index.html" alt="Gifts, Sport, Toys" title="Gifts, Sport, Toys">Gifts, Sport, Toys</a>
+                                    </li>
+                                    <li class="navList-item">
+                                        <a class="navList-action" href="../health-beauty/index.html" alt="Health &amp; Beauty" title="Health &amp; Beauty">Health &amp; Beauty</a>
+                                    </li>
+                                    <li class="navList-item">
+                                        <a class="navList-action" href="../tv/index.html" alt="TV" title="TV">TV</a>
+                                    </li>
+                                    <li class="navList-item">
+                                        <a class="navList-action" href="../laptop/index.html" alt="Laptop" title="Laptop">Laptop</a>
+                                    </li>
+                                    <li class="navList-item">
+                                        <a class="navList-action" href="../accessories/index.html" alt="Accessories" title="Accessories">Accessories</a>
+                                    </li>
+                                    <li class="navList-item">
+                                        <a class="navList-action" href="../organic/index.html" alt="Organic" title="Organic">Organic</a>
+                                    </li>
+                                    <li class="navList-item">
+                                        <a class="navList-action" href="../digital-electric/index.html" alt="Digital &amp; Electric" title="Digital &amp; Electric">Digital &amp; Electric</a>
+                                    </li>
+                                </ul>
+                            
                         </div>
                     </div>
 
@@ -137,12 +394,12 @@
                                 <figure class="productView-image"
                                         data-image-gallery-main
                                         data-zoom-image="../../cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/1580x1580/products/93/397/10__85920.1542788457a885.jpg?c=2&amp;imbypass=on">
-                                    <a class="productView-image-main " href="@Model.Image">
+                                    <a class="productView-image-main " href="../../cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/1580x1580/products/93/397/10__85920.1542788457a885.jpg?c=2&amp;imbypass=on">
                                         <img class="productView-image--default lazyload"
                                              data-sizes="auto"
-                                             src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg"
-                                             data-src="../../cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/500x500/products/93/397/10__85920.1542788457a885.jpg?c=2&amp;imbypass=on"
-                                             alt="1 L Le Parfait Jar" title="1 L Le Parfait Jar" data-main-image>
+                                             src="@Model.Image"
+                                             data-src="@Model.Image"
+                                             alt="1 L Le Parfait Jar" title="@Model.Name" data-main-image>
                                     </a>
 
                                 </figure>
@@ -252,7 +509,7 @@
                             <section class="productView-details">
                                 <div class="productView-product">
 
-                                    <h1 class="productView-title" itemprop="name">1 L Le Parfait Jar</h1>
+                                    <h1 class="productView-title" itemprop="name">@Model.Name</h1>
 
                                     <div class="productView-rating rating--small" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
                                         <meta itemprop="ratingValue" content="5">
@@ -397,10 +654,10 @@
                                                 <meta itemprop="priceCurrency" content="AUD">
                                                 <meta itemprop="valueAddedTaxIncluded" content="false">
                                             </div>
-                                            <span data-product-price-without-tax class="price price--withoutTax"> @(Model.Price.HasValue?Model.Price.Value.ToString("No"):"Liên Hệ")</span>
+                                            <span data-product-price-without-tax class="price price--withoutTax">@(Model.Price.HasValue ? Model.Price.Value.ToString("0") : "Liên hệ")</span>
 
                                             <!--MSRP:-->
-                                            <span data-product-rrp-price-without-tax class="price price--rrp"> $14.07</span>
+                                            <span data-product-rrp-price-without-tax class="price price--rrp"> @(Model.PromotionPrice.HasValue ? Model.PromotionPrice.Value.ToString("0") : "Liên hệ")</span>
 
                                             <!--Was:-->
                                             <span data-product-non-sale-price-without-tax class="price price--rrp"> $14.00</span>
@@ -425,7 +682,7 @@
 
                                         <dl class="productView-info-dl">
                                             <dt class="productView-info-name">Brand</dt>
-                                            <dd class="productView-info-value" data-product-brand><a href="../brands/ofs/index.html" itemprop="url"><span itemprop="name">OFS</span></a></dd>
+                                            <dd class="productView-info-value" data-product-brand><a href="../brands/ofs/index.html" itemprop="url"><span itemprop="name">@brand.Name</span></a></dd>
                                             <dt class="productView-info-name">SKU:</dt>
                                             <dd class="productView-info-value" data-product-sku>SLLPJ</dd>
 
@@ -558,13 +815,13 @@
                                         </div>
                                         <div class="form-action">
                                             <input id="form-action-addToCart" data-wait-message="Adding to cart…" class="button button--primary button--addtocart" type="submit"
-                                                   value="Add to Cart">
+                                                   value="Thêm vào giỏ hàng">
                                         </div>
                                         <!-- snippet location product_addtocart -->
                                     </form>
                                     <form action="https://sb-clickboom.mybigcommerce.com/wishlist.php?action=add&amp;product_id=93" class="form form-wishlist form-action" data-wishlist-add method="post">
                                         <a aria-controls="wishlist-dropdown" aria-expanded="false" class="button dropdown-menu-button" data-dropdown="wishlist-dropdown">
-                                            <span>Add to Wish List</span>
+                                            <span>Thêm vào danh sách yêu thích</span>
                                             <i aria-hidden="true" class="icon">
                                                 <svg>
                                                     <use xlink:href="#icon-chevron-down" />
@@ -609,8 +866,7 @@
 
                             <div class="tabs-contents ">
                                 <div class="tab-content is-active" id="tab-description">
-                                    <p>@Html.Raw(Model.Detail)</p>
-                                    
+                                    <p>@Model.Description</p>
                                     <!-- snippet location product_description -->
                                 </div>
 
@@ -698,7 +954,7 @@
                     <div class="productView-related ">
                         <ul class="tabs nav-tabs" data-tab role="tablist">
                             <li class="tab is-active" role="presentational">
-                                <a class="tab-title" href="/san-pham" role="tab" tabindex="0" aria-selected="true" controls="tab-related">Sản phẩm cùng loại</a>
+                                <a class="tab-title" href="#tab-related" role="tab" tabindex="0" aria-selected="true" controls="tab-related">Sản phẩm cùng loại</a>
                             </li>
                             <li class="tab tab-last" role="presentational">
                                 <a class="tab-title" href="#tab-similar" role="tab" tabindex="0" aria-selected="false" controls="tab-similar">Customers Also Viewed</a>
@@ -749,11 +1005,12 @@
     }'>
 
 
-
-                                    <div class="productCarousel-slide product-layout product-grid">
-                                        @foreach (var item in relatedproducts)
+                                    @foreach (var item in relatedproducts)
                                             {
                                                 var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+                                    <div class="productCarousel-slide product-layout product-grid">
+
+
                                         <article class="product-item-container ">
                                             <div class="left-block ">
 
@@ -770,7 +1027,7 @@
                                                 </div>
 
                                                 <a href="@url" class="product-item-photo">
-                                                    <img class="img-responsive lazyload" data-sizes="auto" src="@item.Image" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/98/388/5__34411.1542788343.jpg?c=2" alt="" title="">
+                                                    <img class="img-responsive lazyload" data-sizes="auto" src="@item.Image" data-src="@item.Image" alt="" title="">
                                                 </a>
 
                                                 <a href="#" class="quickview btn-button d-none d-md-block" data-animation="false" data-product-id="98" title="Quick view"> <i class="fa fa-search"></i></a>
@@ -781,15 +1038,15 @@
 
                                             <div class="right-block" data-card-body="98">
                                                 <h4 class="card-title">
-                                                    <a href="../laundry-detergent/index.html"></a>
+                                                    <a href="../laundry-detergent/index.html">@item.Name</a>
 
                                                 </h4>
-                                                <p class="card-text" data-test-info-type="brandName">Common Good</p>
+                                                <p class="card-text" data-test-info-type="brandName">@item.Brand_ID</p>
 
 
                                                 <div class="price-section price-section--withoutTax ">
 
-                                                    <span data-product-price-without-tax class="price price--withoutTax"> $42.13</span>
+                                                    <span data-product-price-without-tax class="price price--withoutTax"> @item.Price</span>
 
 
 
@@ -840,7 +1097,7 @@
                                                     <div class="action-item wishlist">
                                                         <form class="form" method="post" action="https://sb-clickboom.mybigcommerce.com/wishlist.php?action=add&amp;product_id=98" data-wishlist-add>
                                                             <input type="hidden" name="variation_id" value="">
-                                                            <input class="button button--small card-figcaption-button" type="hidden" value="Yêu thích">
+                                                            <input class="button button--small card-figcaption-button" type="hidden" value="Add to Wish List">
 
                                                             <button class="action-link button--wishlist" type="submit" title="Add to Wish List">
                                                                 <i class="fa fa-heart"></i>
@@ -866,9 +1123,9 @@
                                             </div>
 
                                         </article>
-                                        }
-                                    </div>
 
+                                    </div>
+                                    }
 
 
 

@@ -9,12 +9,31 @@ namespace Model.EF
     [Table("Footer")]
     public partial class Footer
     {
-        [StringLength(50)]
-        public string ID { get; set; }
+        public long ID { get; set; }
 
-        [Column(TypeName = "text")]
-        public string Text { get; set; }
+        [StringLength(250)]
+        public string Name { get; set; }
+
+        [StringLength(500)]
+        public string Link { get; set; }
+
+        [StringLength(50)]
+        public string Icon { get; set; }
+
+        public int? DisplayOrder { get; set; }
+
+        public long? ParentID { get; set; }
+
+        [StringLength(500)]
+        public string Image { get; set; }
+
+        public bool? Target { get; set; }
+
+        [StringLength(250)]
+        public string MetaTitle { get; set; }
 
         public bool? Status { get; set; }
+
+        public int? FooterType_ID { get; set; }
     }
 }

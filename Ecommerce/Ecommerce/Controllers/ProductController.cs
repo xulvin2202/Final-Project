@@ -16,18 +16,19 @@ namespace Ecommerce.Controllers
         [ChildActionOnly]
         public PartialViewResult ProductCategory()
         {
-            var model = new EcommerceDao().ListAllCategory();
+            var model = new CategoryDao().ListAllCategory();
             return PartialView(model);
         }
-        public ActionResult Category(long id)
+        public ActionResult Category(long cateid)
         {
-            var category = new EcommerceDao().ViewDetail(id);
+            var category = new CategoryDao().ViewDetail(cateid);
             return View(category);
         }
-       public ActionResult Detail(long id)
+        public ActionResult Detail(long id)
         {
             var product = new EcommerceDao().ViewDetail(id);
-            ViewBag.Category = new EcommerceDao().ViewDetail(product.Category_ID.Value);
+            ViewBag.Category = new CategoryDao().ViewDetail(product.Category_ID.Value);
+           
             ViewBag.RelatedProducts = new EcommerceDao().ListRelatedProducts(id);
             return View(product);
         }

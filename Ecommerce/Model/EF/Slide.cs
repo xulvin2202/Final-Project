@@ -16,7 +16,7 @@ namespace Model.EF
 
         public int? DisplayOrder { get; set; }
 
-        [StringLength(50)]
+        [StringLength(500)]
         public string Link { get; set; }
 
         [StringLength(50)]
