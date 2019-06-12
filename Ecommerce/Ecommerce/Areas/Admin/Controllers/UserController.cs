@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -30,10 +31,11 @@ namespace Ecommerce.Areas.Admin.Controllers
             return View(user);
         }
         [HttpPost]
-        public ActionResult Create(User user)
+        public ActionResult Create(User user, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
+                
                 var dao = new UserDao();
                 if (dao.CheckUserName(user.UserName))
                 {
@@ -48,7 +50,19 @@ namespace Ecommerce.Areas.Admin.Controllers
                     var a = new User();
                     var encrytedMd5Hash = Encryptor.MD5Hash(user.Password);
                     user.Password = encrytedMd5Hash;
-                    a.Image = user.Image;
+                    var path = "";
+                    var filename = "";
+                    if (image != null)
+                    {
+                        filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") + image.FileName;
+                        path = Path.Combine(Server.MapPath("~/Image/"), filename);
+                        image.SaveAs(path);
+                        a.Image = filename; //Luu ý
+                    }
+                    else
+                    {
+                        a.Image = "logo.png";
+                    }
                     a.UserName = user.UserName;
                     a.Name = user.Name;
                     a.Phone = user.Phone;

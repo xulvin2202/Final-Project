@@ -40,14 +40,14 @@
 
 
                                     <ul class="navPage-subMenu-list grid-2">
-                                        @foreach (var i in submenu)
+                                        @foreach (var subsubmenu in submenu)
                                         {
-                                            var subsubmenu = Model.Where(x => x.ParentID == submenu.Count());
+                                            
                                             <li class="navPage-subMenu-item">
                                                 <ul class="navPage-childList" id="navPages-vertical-24">
 
                                                     <li class="navPage-childList-item">
-                                                        <a class="navPage-childList-action navPages-action" href="/san-pham/@i.MetaTitle-@i.ID">@i.Name</a>
+                                                        <a href="/san-pham/@subsubmenu.MetaTitle-@subsubmenu.ID" @*class="navPage-childList-action navPages-action"*@ >@subsubmenu.Name</a>
                                                     </li>
 
 

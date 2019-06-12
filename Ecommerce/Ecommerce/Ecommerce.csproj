@@ -1803,6 +1803,8 @@
     <Content Include="fonts\Simple-Line-Iconsb26c.html" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\Brand\Brand1.jpg" />
+    <Content Include="Image\logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />

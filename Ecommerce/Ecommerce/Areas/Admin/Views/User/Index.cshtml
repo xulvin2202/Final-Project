@@ -40,8 +40,9 @@
                 <table class="table table-hover table-custom spacing8">
                     <thead>
                         <tr>
+                            <th></th>
                             <th class="w60">Tên</th>
-                            @*<th></th>*@
+                            <th class="w60">Account</th>
 
                             <th>Điện thoại</th>
                             <th>Địa chỉ</th>
@@ -53,12 +54,15 @@
                         @foreach (var item in Model)
                         {
                         <tr>
-                            @*<td>
-            <img src="#" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name">
-        </td>*@
+                            <td>
+                                <img src="@item.Image" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name">
+                            </td>
                             <td>
                                 <h6 class="mb-0" autocomplete="off">@item.Name</h6>
                                 <span autocomplete="off">@item.Email</span>
+                            </td>
+                            <td>
+                               @item.UserName
                             </td>
 
                             <td autocomplete="off">@item.Phone</td>
@@ -66,13 +70,15 @@
                             <td><a href="#" class="btn btn-outline-success" data-id="@item.ID">@(item.Status ? "Kích hoạt" : "Khóa")</a></td>
                             <td>
                                 <a href="~/Admin/User/Edit/@item.ID" class="btn btn-sm btn-default" title="Edit"><i class="icon-pencil"></i></a>
-                                <button type="button" class="btn btn-sm btn-default js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
+                                @*<button type="button" class="btn btn-sm btn-default js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>*@
+                                @Ajax.ActionLink("Xoá", "Delete",null, new { @id = item.ID }, new AjaxOptions
                            {
                                Confirm = "Bạn chắc chắn muốn xóa ?",
                                OnComplete = "$('#row_" + @item.ID + "').remove()",
                                HttpMethod = "Delete",
-                           })
+                           }, new { @class = "btn btn-sm btn-default js-sweetalert",
+                               @id = "myActionLinkId" })
+                                <script>$("#myActionLinkId").prepend("<i class='fa fa-trash-o text-danger'></i> ");</script>
                             </td>
                         </tr>
                         }

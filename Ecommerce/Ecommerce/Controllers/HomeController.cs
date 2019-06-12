@@ -18,6 +18,7 @@ namespace Ecommerce.Controllers
             ViewBag.FeatureProduct = product.ListFeatureProduct(8);
             ViewBag.SaleProduct = product.ListSaleProduct(4);
             ViewBag.Brand = product.ListBrand(12);
+            ViewBag.Content = product.ListContent(6);
             return View(model);
         }
         [ChildActionOnly]
@@ -51,6 +52,8 @@ namespace Ecommerce.Controllers
             var model = new EcommerceDao().ListFooterByGroupId(2);
             return PartialView(model);
         }
+      
+        
 
     }
 }

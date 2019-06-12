@@ -52,12 +52,18 @@
                                 <input type="password" id="Password" name="Password" placeholder="Nhập mật khẩu" class="form-control" required>
                             </div>
                         </div>
+                        <div class="form-group">
+                            @Html.Label("Hình đại diện", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <input type="file" name="image" id="image" accept=".jpg,.png,.gif,.jpeg,.bmp" />
+                            </div>
+                        </div>
                         <div class="form-group" autocomplete="off">
                             <div class="col-md-4">
                                 <label>Tên</label>
                                 <input type="text" id="Name" name="Name" placeholder="Nhập tên" class="form-control" required>
                             </div>
-                        </div> 
+                        </div>
                         <div class="form-group" autocomplete="off">
                             <div class="col-md-4">
                                 <label>Địa chỉ</label>

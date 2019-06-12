@@ -31,6 +31,7 @@ namespace Model.Dao
         {
             return db.Categories.Where(x => x.Status == true).ToList();
         }
+        
 
         public List<Menu> ListByGroupId(int groupId)
         {
@@ -45,6 +46,10 @@ namespace Model.Dao
         {
             return db.Products.OrderByDescending(x => x.CreateDate).Take(top).ToList();
         }
+        public List<Product> ListByCategoryId(long categoryID)
+        {
+            return db.Products.Where(x => x.Category_ID == categoryID).ToList();
+        }
         public List<Product> ListFeatureProduct(int top)
         {
             return db.Products.Where(x => x.TopHot != null && x.TopHot > DateTime.Now).OrderByDescending(x => x.CreateDate).Take(top).ToList();
@@ -53,6 +58,25 @@ namespace Model.Dao
         {
             return db.Products.OrderBy(x => x.PromotionPrice).Take(top).ToList();
         }
+        public List<Content> ListContent(int id)
+        {
+            return db.Contents.OrderByDescending(x => x.CreateDate).Take(id).ToList();
+        }
+        /// <summary>
+        /// listbrandbyifproduct
+        /// </summary>
+        /// <param name="productID"></param>
+        /// <returns></returns>
+        //public List<Brand> ListAllBrand(long productID)
+        //{
+        //    var id = db.Products.Find(productID);
+        //    return db.Brands.Where(x => x.ID!= productID && x.ID == id.Brand_ID).ToList();
+        //}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <returns></returns>
         public List<Brand> ListBrand(int brand)
         {
             return db.Brands.OrderBy(x => x.CreateDate).Take(brand).ToList();

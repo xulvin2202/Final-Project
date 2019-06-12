@@ -22,13 +22,17 @@ namespace Ecommerce.Controllers
         public ActionResult Category(long cateid)
         {
             var category = new CategoryDao().ViewDetail(cateid);
-            return View(category);
+            ViewBag.Category = category;
+            var model = new EcommerceDao().ListByCategoryId(cateid);
+            ///
+            //ViewBag.Brand = new EcommerceDao().ListAllBrand(cateid);
+            return View(model);
         }
         public ActionResult Detail(long id)
         {
             var product = new EcommerceDao().ViewDetail(id);
             ViewBag.Category = new CategoryDao().ViewDetail(product.Category_ID.Value);
-           
+          
             ViewBag.RelatedProducts = new EcommerceDao().ListRelatedProducts(id);
             return View(product);
         }
