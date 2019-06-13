@@ -47,9 +47,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CKFinder, Version=2.6.0.2792, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
+    <Reference Include="CKFinder, Version=2.3.1.2492, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Assets\Admin\ckfinder\bin\Release\CKFinder.dll</HintPath>
+      <HintPath>C:\Users\xulvi\Downloads\ckfinder_aspnet_2.6.2\ckfinder\bin\Release\CKFinder.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -160,6 +161,7 @@
     <Compile Include="Areas\Admin\Controllers\ContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -170,6 +172,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Help\Functions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -701,6 +704,7 @@
     <Content Include="Assets\Admin\ckfinder\bin\Debug\CKFinder.dll" />
     <Content Include="Assets\Admin\ckfinder\bin\Release\CKFinder.dll" />
     <Content Include="Assets\Admin\ckfinder\changelog.txt" />
+    <Content Include="Assets\Admin\ckfinder\CKFinder.dll" />
     <Content Include="Assets\Admin\ckfinder\ckfinder.html" />
     <Content Include="Assets\Admin\ckfinder\ckfinder.js" />
     <Content Include="Assets\Admin\ckfinder\ckfinder_v1.js" />
@@ -1908,6 +1912,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Views\Content\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cloud-zoom.js" />
     <Content Include="Scripts\countdown.js" />
@@ -1956,6 +1961,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Areas\Admin\Views\Product\" />
     <Folder Include="Image\Content\" />
     <Folder Include="Models\" />
   </ItemGroup>

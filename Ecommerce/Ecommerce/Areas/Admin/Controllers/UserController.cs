@@ -89,7 +89,7 @@ namespace Ecommerce.Areas.Admin.Controllers
 
         }
         [HttpPost]
-        public ActionResult Edit(User user)
+        public ActionResult Edit(User user, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
@@ -100,7 +100,19 @@ namespace Ecommerce.Areas.Admin.Controllers
                     user.Password = encrytedMd5Hash;
                 }
                 var a = new User();
-              
+                var path = "";
+                var filename = "";
+                if (image != null)
+                {
+                    filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") + image.FileName;
+                    path = Path.Combine(Server.MapPath("~/Image/"), filename);
+                    image.SaveAs(path);
+                    a.Image = filename; //Luu ý
+                }
+                else
+                {
+                    a.Image = "logo.png";
+                }
                 a.Name = user.Name;
                 a.Phone = user.Phone;
                 a.Address = user.Address;

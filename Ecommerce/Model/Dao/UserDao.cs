@@ -46,7 +46,12 @@ namespace Model.Dao
             }
 
         }
-        
+        public IEnumerable<Content> ListAllContent()
+        {
+            IQueryable<Content> model = db.Contents;
+            
+            return model.OrderByDescending(x => x.CreateDate).ToList();
+        }
         public IEnumerable<User> ListAllPaging(string searchString,int page, int pageSize)
         {
             IQueryable<User> model = db.Users;

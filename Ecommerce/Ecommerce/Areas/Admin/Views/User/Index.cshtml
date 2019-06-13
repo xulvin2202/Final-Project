@@ -6,20 +6,21 @@
 }
 @section header{ Danh sách }
 @section jsFooter{
-<script>
-            $('#btnSelectImage').on('click', function(e) {
+    <script>
+        $('#btnSelectImage').on('click', function (e) {
             e.preventDefault();
             var finder = new CKFinder();
-            finder.selectActionFunction = function(url) {
-                    $('#txtImage').var(url);
+            finder.selectActionFunction = function (url) {
+                $('#txtImage').var(url);
             };
-            finder.popup();})
-</script>
+            finder.popup();
+        })
+    </script>
 }
 <div class="card">
     <ul class="nav nav-tabs">
         <li class="nav-item"><a class="nav-link active show" data-toggle="tab" href="#Users">Danh sách</a></li>
-        <li class="nav-item">@Html.ActionLink("Tạo mới", "Create", null, new { @class = "nav-link"})</li>
+        <li class="nav-item">@Html.ActionLink("Tạo mới", "Create", null, new { @class = "nav-link" })</li>
     </ul>
     <div class="tab-content mt-0">
         <div class="tab-pane active show" id="Users">
@@ -53,49 +54,51 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                        <tr>
-                            <td>
-                                <img src="@item.Image" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name">
-                            </td>
-                            <td>
-                                <h6 class="mb-0" autocomplete="off">@item.Name</h6>
-                                <span autocomplete="off">@item.Email</span>
-                            </td>
-                            <td>
-                               @item.UserName
-                            </td>
+                            <tr>
+                                <td>
+                                    <img src="@item.Image" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name">
+                                </td>
+                                <td>
+                                    <h6 class="mb-0" autocomplete="off">@item.Name</h6>
+                                    <span autocomplete="off">@item.Email</span>
+                                </td>
+                                <td>
+                                    @item.UserName
+                                </td>
 
-                            <td autocomplete="off">@item.Phone</td>
-                            <td autocomplete="off">@item.Address</td>
-                            <td><a href="#" class="btn btn-outline-success" data-id="@item.ID">@(item.Status ? "Kích hoạt" : "Khóa")</a></td>
-                            <td>
-                                <a href="~/Admin/User/Edit/@item.ID" class="btn btn-sm btn-default" title="Edit"><i class="icon-pencil"></i></a>
-                                @*<button type="button" class="btn btn-sm btn-default js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>*@
-                                @Ajax.ActionLink("Xoá", "Delete",null, new { @id = item.ID }, new AjaxOptions
-                           {
-                               Confirm = "Bạn chắc chắn muốn xóa ?",
-                               OnComplete = "$('#row_" + @item.ID + "').remove()",
-                               HttpMethod = "Delete",
-                           }, new { @class = "btn btn-sm btn-default js-sweetalert",
-                               @id = "myActionLinkId" })
-                                <script>$("#myActionLinkId").prepend("<i class='fa fa-trash-o text-danger'></i> ");</script>
-                            </td>
-                        </tr>
+                                <td autocomplete="off">@item.Phone</td>
+                                <td autocomplete="off">@item.Address</td>
+                                <td><a href="#" class="btn btn-outline-success" data-id="@item.ID">@(item.Status ? "Kích hoạt" : "Khóa")</a></td>
+                                <td>
+                                    <a href="~/Admin/User/Edit/@item.ID" class="btn btn-sm btn-default" title="Edit"><i class="icon-pencil"></i></a>
+                                    @*<button type="button" class="btn btn-sm btn-default js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>*@
+                                    @Ajax.ActionLink("Xoá", "Delete",null, new { @id = item.ID }, new AjaxOptions
+                               {
+                                   Confirm = "Bạn chắc chắn muốn xóa ?",
+                                   OnComplete = "$('#row_" + @item.ID + "').remove()",
+                                   HttpMethod = "Delete",
+                               }, new { @class = "btn btn-sm btn-default js-sweetalert",
+                                   @id = "myActionLinkId" })
+                                    <script>$("#myActionLinkId").prepend("<i class='fa fa-trash-o text-danger'></i> ");</script>
+                                </td>
+                            </tr>
                         }
                     </tbody>
                 </table>
-                <div id="container" style="margin-left: 20px">
-                    <p></p>
-                    <p></p>
-                    <div class="pagination" style="margin-left: 400px">
-                        <tr>
+                <div class="col-lg-4 col-sm-12">
+
+                    <nav aria-label="...">
+                        <ul class="pagination">
                             Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
                             of @Model.PageCount Entries
-                        </tr>
-                        <br />
-                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @seachString = @ViewBag.SearchString }))
-                    </div>
+
+
+                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page, @seachString = @ViewBag.SearchString, @class = "page-item" }))
+
+                        </ul>
+                    </nav>
                 </div>
+
             </div>
         </div>
         <div class="tab-pane" id="addUser">

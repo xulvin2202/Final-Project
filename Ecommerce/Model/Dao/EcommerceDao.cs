@@ -22,6 +22,7 @@ namespace Model.Dao
         {
             return db.ContentCategories.Where(x => x.Status == true).ToList();
         }
+        
 
         public Content GetByID(long id)
         {
@@ -46,9 +47,11 @@ namespace Model.Dao
         {
             return db.Products.OrderByDescending(x => x.CreateDate).Take(top).ToList();
         }
-        public List<Product> ListByCategoryId(long categoryID)
+        public List<Product> ListByCategoryId(long categoryID, ref int totalRecord, int pageIndex=1,int pageSize=2)
         {
-            return db.Products.Where(x => x.Category_ID == categoryID).ToList();
+            totalRecord = db.Products.Where(x => x.Category_ID == categoryID).Count();
+            var model = db.Products.Where(x => x.Category_ID == categoryID).OrderByDescending(x=>x.CreateDate).Skip((pageSize-1)*pageIndex).Take(pageSize).ToList();
+            return model;
         }
         public List<Product> ListFeatureProduct(int top)
         {
@@ -56,7 +59,7 @@ namespace Model.Dao
         }
         public List<Product> ListSaleProduct(int top)
         {
-            return db.Products.OrderBy(x => x.PromotionPrice).Take(top).ToList();
+            return db.Products.OrderByDescending(x => x.PromotionPrice ).Take(top).ToList();
         }
         public List<Content> ListContent(int id)
         {
