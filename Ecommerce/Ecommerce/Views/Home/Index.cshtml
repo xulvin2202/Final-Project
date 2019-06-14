@@ -173,7 +173,7 @@
             }
         ]
     }'>
-                                    
+
                                     <div class="first-side productCarousel-slide product-layout product-list">
                                         @foreach (var item in ListSaleProduct)
                                         {
@@ -185,22 +185,22 @@
                                                         @if (item.PromotionPrice != null && item.CreateDate > DateTime.Now)
                                                         {<div class="sale-flag-discount">
                                                                 <span class="sale-text">Sale</span>
-                                                        </div>
-                                                                }
-                                                                else
-                                                                {
-                                                         @*<div class="sale-flag-discount">
-                                                             <span class="sale-text">Sale</span>
-                                                         </div>*@
-                                                                }
-                                                               
-                                                            <a href="@url" class="product-item-photo">
-                                                                <img class="card-image lazyload" data-sizes="auto" src="~/Image/@item.Image" alt="" width="85" height="85">
-                                                            </a>
-                                                        </div>
+                                                            </div>
+                                                        }
+                                                        else
+                                                        {
+                                                            @*<div class="sale-flag-discount">
+                                                                    <span class="sale-text">Sale</span>
+                                                                </div>*@
+                                                        }
+
+                                                        <a href="@url" class="product-item-photo">
+                                                            <img class="card-image lazyload" data-sizes="auto" src="~/Image/@item.Image" alt="" width="85" height="85">
+                                                        </a>
+                                                    </div>
                                                     <div class="right-block">
                                                         <h4 class="card-title">
-                                                            <a href="able-brewing-system-care/index.html">@item.Name</a>
+                                                            <a href="@url">@item.Name</a>
                                                         </h4>
 
                                                         <div class="ratings ">
@@ -241,12 +241,12 @@
                                                         <div class="price-section price-section--withoutTax ">
                                                             @if (item.PromotionPrice != null)
                                                             {
-                                                                <span data-product-price-without-tax class="price price--withoutTax">@String.Format("{0:#,0 VND}", @item.PromotionPrice  )  </span>
-                                                                <span data-product-non-sale-price-without-tax class="price price--rrp">@String.Format("{0:0,0}",item.Price)</span>
+                                                                <span data-product-price-without-tax class="price price--withoutTax">@String.Format("{0:#,0 VND}", @item.PromotionPrice)  </span>
+                                                                <span data-product-non-sale-price-without-tax class="price price--rrp">@String.Format("{0:0,0}", item.Price)</span>
                                                             }
                                                             else
                                                             {
-                                                                <span data-product-price-without-tax class="price price--withoutTax">@String.Format("{0:#,0 VND}",item.Price)</span>
+                                                                <span data-product-price-without-tax class="price price--withoutTax">@String.Format("{0:#,0 VND}", item.Price)</span>
                                                             }
 
 
@@ -282,177 +282,177 @@
 
 
                                             @*<article class="product-item-container product-row ">
-                <div class="item">
-                    <div class="left-block">
-                        <a href="tiered-wire-basket-detergent/index.html" class="product-item-photo">
-                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/100x100/products/97/392/13__59342.1542788388.jpg?c=2" alt="" width="85" height="85">
-                        </a>
-                    </div>
-                    <div class="right-block">
-                        <h4 class="card-title">
-                            <a href="tiered-wire-basket-detergent/index.html">Tiered Wire Basket Detergent</a>
-                        </h4>
+                                                    <div class="item">
+                                                        <div class="left-block">
+                                                            <a href="tiered-wire-basket-detergent/index.html" class="product-item-photo">
+                                                                <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/100x100/products/97/392/13__59342.1542788388.jpg?c=2" alt="" width="85" height="85">
+                                                            </a>
+                                                        </div>
+                                                        <div class="right-block">
+                                                            <h4 class="card-title">
+                                                                <a href="tiered-wire-basket-detergent/index.html">Tiered Wire Basket Detergent</a>
+                                                            </h4>
 
-                        <div class="ratings ">
-                            <div class="prod-rating" data-test-info-type="productRating">
-                                <span class="rating--small">
-                                    <span class="icon icon--ratingEmpty">
-                                        <svg>
-                                            <use xlink:href="#icon-star" />
-                                        </svg>
-                                    </span>
-                                    <span class="icon icon--ratingEmpty">
-                                        <svg>
-                                            <use xlink:href="#icon-star" />
-                                        </svg>
-                                    </span>
-                                    <span class="icon icon--ratingEmpty">
-                                        <svg>
-                                            <use xlink:href="#icon-star" />
-                                        </svg>
-                                    </span>
-                                    <span class="icon icon--ratingEmpty">
-                                        <svg>
-                                            <use xlink:href="#icon-star" />
-                                        </svg>
-                                    </span>
-                                    <span class="icon icon--ratingEmpty">
-                                        <svg>
-                                            <use xlink:href="#icon-star" />
-                                        </svg>
-                                    </span>
-                                    <!-- snippet location product_rating -->
+                                                            <div class="ratings ">
+                                                                <div class="prod-rating" data-test-info-type="productRating">
+                                                                    <span class="rating--small">
+                                                                        <span class="icon icon--ratingEmpty">
+                                                                            <svg>
+                                                                                <use xlink:href="#icon-star" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <span class="icon icon--ratingEmpty">
+                                                                            <svg>
+                                                                                <use xlink:href="#icon-star" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <span class="icon icon--ratingEmpty">
+                                                                            <svg>
+                                                                                <use xlink:href="#icon-star" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <span class="icon icon--ratingEmpty">
+                                                                            <svg>
+                                                                                <use xlink:href="#icon-star" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <span class="icon icon--ratingEmpty">
+                                                                            <svg>
+                                                                                <use xlink:href="#icon-star" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <!-- snippet location product_rating -->
 
-                                </span>
-                            </div>
-                        </div>
-
-
-                        <div class="price-section price-section--withoutTax ">
-
-                            <span data-product-price-without-tax class="price price--withoutTax"> $119.95</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
 
 
+                                                            <div class="price-section price-section--withoutTax ">
 
-                        </div>
-
-                        <div class="button-group">
-
-                            <div class="action-item addToCart">
-                                <a href="cart6478.html?action=add&amp;product_id=97" data-addtocart data-product-id="97" data-wait-message="Add to Cart" class="action-link  button--cart" title="Thêm vào giỏ hàng"><i class="fa fa-shopping-basket"></i></a>
-                            </div>
-
-
-                            <div class="action-item wishlist">
-                                <form class="form" method="post" action="https://sb-clickboom.mybigcommerce.com/wishlist.php?action=add&amp;product_id=97" data-wishlist-add>
-                                    <input type="hidden" name="variation_id" value="">
-                                    <input class="button button--small card-figcaption-button" type="hidden" value="Add to Wish List">
-
-                                    <button class="action-link button--wishlist" type="submit" title="Add to Wish List">
-                                        <i class="fa fa-heart"></i>
-                                    </button>
-                                </form>
-                            </div>
-
-                            <div class="action-item quickview">
-                                <a href="#" class="quickview btn-button" data-animation="false" data-product-id="97" title="Quick view"> <i class="fa fa-search"></i></a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </article>
+                                                                <span data-product-price-without-tax class="price price--withoutTax"> $119.95</span>
 
 
 
-            <article class="product-item-container product-row ">
-                <div class="item">
-                    <div class="left-block">
-                        <a href="canvas-laundry-cart-small/index.html" class="product-item-photo">
-                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/100x100/products/103/385/4__17897.1542788297.jpg?c=2" alt="" width="85" height="85">
-                        </a>
-                    </div>
-                    <div class="right-block">
-                        <h4 class="card-title">
-                            <a href="canvas-laundry-cart-small/index.html">Canvas Laundry Cart - Small</a>
-                        </h4>
+                                                            </div>
 
-                        <div class="ratings ">
-                            <div class="prod-rating" data-test-info-type="productRating">
-                                <span class="rating--small">
-                                    <span class="icon icon--ratingEmpty">
-                                        <svg>
-                                            <use xlink:href="#icon-star" />
-                                        </svg>
-                                    </span>
-                                    <span class="icon icon--ratingEmpty">
-                                        <svg>
-                                            <use xlink:href="#icon-star" />
-                                        </svg>
-                                    </span>
-                                    <span class="icon icon--ratingEmpty">
-                                        <svg>
-                                            <use xlink:href="#icon-star" />
-                                        </svg>
-                                    </span>
-                                    <span class="icon icon--ratingEmpty">
-                                        <svg>
-                                            <use xlink:href="#icon-star" />
-                                        </svg>
-                                    </span>
-                                    <span class="icon icon--ratingEmpty">
-                                        <svg>
-                                            <use xlink:href="#icon-star" />
-                                        </svg>
-                                    </span>
-                                    <!-- snippet location product_rating -->
+                                                            <div class="button-group">
 
-                                </span>
-                            </div>
-                        </div>
+                                                                <div class="action-item addToCart">
+                                                                    <a href="cart6478.html?action=add&amp;product_id=97" data-addtocart data-product-id="97" data-wait-message="Add to Cart" class="action-link  button--cart" title="Thêm vào giỏ hàng"><i class="fa fa-shopping-basket"></i></a>
+                                                                </div>
 
 
-                        <div class="price-section price-section--withoutTax ">
+                                                                <div class="action-item wishlist">
+                                                                    <form class="form" method="post" action="https://sb-clickboom.mybigcommerce.com/wishlist.php?action=add&amp;product_id=97" data-wishlist-add>
+                                                                        <input type="hidden" name="variation_id" value="">
+                                                                        <input class="button button--small card-figcaption-button" type="hidden" value="Add to Wish List">
 
-                            <span data-product-price-without-tax class="price price--withoutTax"> $200.00</span>
+                                                                        <button class="action-link button--wishlist" type="submit" title="Add to Wish List">
+                                                                            <i class="fa fa-heart"></i>
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="action-item quickview">
+                                                                    <a href="#" class="quickview btn-button" data-animation="false" data-product-id="97" title="Quick view"> <i class="fa fa-search"></i></a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </article>
 
 
-                            <!--Was:-->
-                            <span data-product-non-sale-price-without-tax class="price price--rrp"> $249.00</span>
 
-                        </div>
+                                                <article class="product-item-container product-row ">
+                                                    <div class="item">
+                                                        <div class="left-block">
+                                                            <a href="canvas-laundry-cart-small/index.html" class="product-item-photo">
+                                                                <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/100x100/products/103/385/4__17897.1542788297.jpg?c=2" alt="" width="85" height="85">
+                                                            </a>
+                                                        </div>
+                                                        <div class="right-block">
+                                                            <h4 class="card-title">
+                                                                <a href="canvas-laundry-cart-small/index.html">Canvas Laundry Cart - Small</a>
+                                                            </h4>
 
-                        <div class="button-group">
+                                                            <div class="ratings ">
+                                                                <div class="prod-rating" data-test-info-type="productRating">
+                                                                    <span class="rating--small">
+                                                                        <span class="icon icon--ratingEmpty">
+                                                                            <svg>
+                                                                                <use xlink:href="#icon-star" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <span class="icon icon--ratingEmpty">
+                                                                            <svg>
+                                                                                <use xlink:href="#icon-star" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <span class="icon icon--ratingEmpty">
+                                                                            <svg>
+                                                                                <use xlink:href="#icon-star" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <span class="icon icon--ratingEmpty">
+                                                                            <svg>
+                                                                                <use xlink:href="#icon-star" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <span class="icon icon--ratingEmpty">
+                                                                            <svg>
+                                                                                <use xlink:href="#icon-star" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <!-- snippet location product_rating -->
 
-                            <div class="action-item addToCart">
-                                <a href="cartdcc5.html?action=add&amp;product_id=103" data-addtocart data-product-id="103" data-wait-message="Add to Cart" class="action-link  button--cart" title="Thêm vào giỏ hàng"><i class="fa fa-shopping-basket"></i></a>
-                            </div>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
 
 
-                            <div class="action-item wishlist">
-                                <form class="form" method="post" action="https://sb-clickboom.mybigcommerce.com/wishlist.php?action=add&amp;product_id=103" data-wishlist-add>
-                                    <input type="hidden" name="variation_id" value="">
-                                    <input class="button button--small card-figcaption-button" type="hidden" value="Add to Wish List">
+                                                            <div class="price-section price-section--withoutTax ">
 
-                                    <button class="action-link button--wishlist" type="submit" title="Add to Wish List">
-                                        <i class="fa fa-heart"></i>
-                                    </button>
-                                </form>
-                            </div>
+                                                                <span data-product-price-without-tax class="price price--withoutTax"> $200.00</span>
 
-                            <div class="action-item quickview">
-                                <a href="#" class="quickview btn-button" data-animation="false" data-product-id="103" title="Quick view"> <i class="fa fa-search"></i></a>
-                            </div>
 
-                        </div>
-                    </div>
-                </div>
-            </article>*@
+                                                                <!--Was:-->
+                                                                <span data-product-non-sale-price-without-tax class="price price--rrp"> $249.00</span>
+
+                                                            </div>
+
+                                                            <div class="button-group">
+
+                                                                <div class="action-item addToCart">
+                                                                    <a href="cartdcc5.html?action=add&amp;product_id=103" data-addtocart data-product-id="103" data-wait-message="Add to Cart" class="action-link  button--cart" title="Thêm vào giỏ hàng"><i class="fa fa-shopping-basket"></i></a>
+                                                                </div>
+
+
+                                                                <div class="action-item wishlist">
+                                                                    <form class="form" method="post" action="https://sb-clickboom.mybigcommerce.com/wishlist.php?action=add&amp;product_id=103" data-wishlist-add>
+                                                                        <input type="hidden" name="variation_id" value="">
+                                                                        <input class="button button--small card-figcaption-button" type="hidden" value="Add to Wish List">
+
+                                                                        <button class="action-link button--wishlist" type="submit" title="Add to Wish List">
+                                                                            <i class="fa fa-heart"></i>
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="action-item quickview">
+                                                                    <a href="#" class="quickview btn-button" data-animation="false" data-product-id="103" title="Quick view"> <i class="fa fa-search"></i></a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </article>*@
                                         }
                                     </div>
-                                    
 
-                                        @*<div class="productCarousel-slide product-layout product-list">
+
+                                    @*<div class="productCarousel-slide product-layout product-list">
                                             <article class="product-item-container product-row ">
                                                 <div class="item">
                                                     <div class="left-block">
@@ -877,7 +877,7 @@
 
 
 
-                                    </section>
+                                </section>
                             </div>
 
 
@@ -1192,32 +1192,50 @@
                                         <div class="first-side productCarousel-slide product-layout product-grid">
                                             <article class="product-item-container ">
                                                 <div class="left-block ">
-
-                                                    @if (item.PromotionPrice != null)
+                                                    @if (item.PromotionPrice != null && item.PromotionPrice < item.Price)
                                                     {
-                                                    <div class="sale-flag-discount">
-                                                        <span class="sale-text">Sale</span>
-                                                    </div>
+                                                        <div class="sale-flag-discount">
+                                                            <span class="sale-text">Sale</span>
+                                                        </div>
+                                                    }
+                                                    else if (item.PromotionPrice != null && item.PromotionPrice > item.Price)
+                                                    {
+                                                        @*<div class="sale-flag-discount">
+                                                                <span class="sale-text">NEW</span>
+                                                            </div>*@
                                                     }
                                                     else
                                                     {
                                                         @*<div class="sale-flag-discount">
-                                                            <span class="sale-text">NEW</span>
-                                                        </div>*@
+                                                                <span class="sale-text">NEW</span>
+                                                            </div>*@
+
                                                     }
+                                                    @*@if (item.PromotionPrice != null)
+                                                        {
+                                                            <div class="sale-flag-discount">
+                                                                <span class="sale-text">Sale</span>
+                                                            </div>
+                                                        }
+                                                        else
+                                                        {
+                                                            @*<div class="sale-flag-discount">
+                                                                    <span class="sale-text">NEW</span>
+                                                                </div>
+                                                        }*@
 
 
                                                     @*<div class="product-card__gallery product-card__right d-none d-sm-block">
-            <div class="item-img thumb-active " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/103/385/4__17897.1542788297.jpg?c=2">
-                <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/103/385/4__17897.1542788297.jpg?c=2" alt="Canvas Laundry Cart - Small" title="Canvas Laundry Cart - Small">
-            </div>
-            <div class="item-img " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/103/386/9__52557.1542788297.jpg?c=2">
-                <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/103/386/9__52557.1542788297.jpg?c=2" alt="Canvas Laundry Cart - Small" title="Canvas Laundry Cart - Small">
-            </div>
-            <div class="item-img " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/103/387/14__27146.1542788298.jpg?c=2">
-                <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/103/387/14__27146.1542788298.jpg?c=2" alt="Canvas Laundry Cart - Small" title="Canvas Laundry Cart - Small">
-            </div>
-        </div>*@
+                                                            <div class="item-img thumb-active " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/103/385/4__17897.1542788297.jpg?c=2">
+                                                                <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/103/385/4__17897.1542788297.jpg?c=2" alt="Canvas Laundry Cart - Small" title="Canvas Laundry Cart - Small">
+                                                            </div>
+                                                            <div class="item-img " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/103/386/9__52557.1542788297.jpg?c=2">
+                                                                <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/103/386/9__52557.1542788297.jpg?c=2" alt="Canvas Laundry Cart - Small" title="Canvas Laundry Cart - Small">
+                                                            </div>
+                                                            <div class="item-img " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/103/387/14__27146.1542788298.jpg?c=2">
+                                                                <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/103/387/14__27146.1542788298.jpg?c=2" alt="Canvas Laundry Cart - Small" title="Canvas Laundry Cart - Small">
+                                                            </div>
+                                                        </div>*@
 
                                                     <a href="@url" class="product-item-photo">
                                                         <img class="img-responsive lazyload" data-sizes="auto" src="~/Image/@item.Image" alt="" title="">
@@ -1231,22 +1249,22 @@
 
                                                 <div class="right-block" data-card-body="103">
                                                     <h4 class="card-title">
-                                                        <a href="canvas-laundry-cart-small/index.html">@item.Name</a>
+                                                        <a href="@url">@item.Name</a>
 
                                                     </h4>
                                                     <p class="card-text" data-test-info-type="brandName">OFS</p>
 
 
                                                     <div class="price-section price-section--withoutTax ">
-                                                        @if (item.PromotionPrice != null @*&& item.PromotionPrice<item.PromotionPrice*@)
-                                                        {
-                                                            <span data-product-price-without-tax class="price price--withoutTax">@String.Format("{0:#,0 VND}", @item.PromotionPrice)  </span>
-                                                            <span data-product-non-sale-price-without-tax class="price price--rrp">@String.Format("{0:0,0}", item.Price)</span>
-                                                        }
-                                                        else if(item.PromotionPrice == null)
-                                                        {
-                                                            <span data-product-price-without-tax class="price price--withoutTax">@String.Format("{0:#,0 VND}", item.Price)</span>
-                                                        }
+                                                        @if (item.PromotionPrice != null@*&& item.PromotionPrice<item.PromotionPrice*@)
+{
+<span data-product-price-without-tax class="price price--withoutTax">@String.Format("{0:#,0 VND}", @item.PromotionPrice)  </span>
+<span data-product-non-sale-price-without-tax class="price price--rrp">@String.Format("{0:0,0}", item.Price)</span>
+}
+else if (item.PromotionPrice == null)
+{
+<span data-product-price-without-tax class="price price--withoutTax">@String.Format("{0:#,0 VND}", item.Price)</span>
+}
 
 
 
@@ -1461,23 +1479,23 @@
                                                     }
                                                     else
                                                     {
-                                                       
+
                                                     }
 
                                                     @*<div class="product-card__gallery product-card__right d-none d-sm-block">
-                                                        <div class="item-img thumb-active " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/103/385/4__17897.1542788297.jpg?c=2">
-                                                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/103/385/4__17897.1542788297.jpg?c=2" alt="Canvas Laundry Cart - Small" title="Canvas Laundry Cart - Small">
-                                                        </div>
-                                                        <div class="item-img " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/103/386/9__52557.1542788297.jpg?c=2">
-                                                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/103/386/9__52557.1542788297.jpg?c=2" alt="Canvas Laundry Cart - Small" title="Canvas Laundry Cart - Small">
-                                                        </div>
-                                                        <div class="item-img " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/103/387/14__27146.1542788298.jpg?c=2">
-                                                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/103/387/14__27146.1542788298.jpg?c=2" alt="Canvas Laundry Cart - Small" title="Canvas Laundry Cart - Small">
-                                                        </div>
-                                                    </div>s*@
+                                                            <div class="item-img thumb-active " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/103/385/4__17897.1542788297.jpg?c=2">
+                                                                <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/103/385/4__17897.1542788297.jpg?c=2" alt="Canvas Laundry Cart - Small" title="Canvas Laundry Cart - Small">
+                                                            </div>
+                                                            <div class="item-img " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/103/386/9__52557.1542788297.jpg?c=2">
+                                                                <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/103/386/9__52557.1542788297.jpg?c=2" alt="Canvas Laundry Cart - Small" title="Canvas Laundry Cart - Small">
+                                                            </div>
+                                                            <div class="item-img " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/103/387/14__27146.1542788298.jpg?c=2">
+                                                                <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/103/387/14__27146.1542788298.jpg?c=2" alt="Canvas Laundry Cart - Small" title="Canvas Laundry Cart - Small">
+                                                            </div>
+                                                        </div>s*@
 
                                                     <a href="@url" class="product-item-photo">
-                                                        <img class="img-responsive lazyload" data-sizes="auto" src="~/Image/@item.Image"  alt="" title="">
+                                                        <img class="img-responsive lazyload" data-sizes="auto" src="~/Image/@item.Image" alt="" title="">
                                                     </a>
 
                                                     <a href="#" class="quickview btn-button d-none d-md-block" data-animation="false" data-product-id="103" title="Quick view"> <i class="fa fa-search"></i></a>
@@ -1488,7 +1506,7 @@
 
                                                 <div class="right-block" data-card-body="103">
                                                     <h4 class="card-title">
-                                                        <a href="canvas-laundry-cart-small/index.html">@item.Name</a>
+                                                        <a href="@url">@item.Name</a>
 
                                                     </h4>
                                                     <p class="card-text" data-test-info-type="brandName">OFS</p>
@@ -1586,7 +1604,7 @@
                                             </article>
                                         </div>
                                     }
-                                    
+
 
 
                                 </section>
@@ -2461,14 +2479,14 @@
 		            }
 		        ]
 		    }'>
-                            @foreach(var item in ListBrand)
+                            @foreach (var item in ListBrand)
                             {
-                            <div class="sb-brand--item">
+                                <div class="sb-brand--item">
 
-                                <a href="@item.Link" title="@item.Name"><img class="img-fluid lazyload" src="~/Image/@item.Image" alt="brand1" width="158" height="79" /></a>
-                            </div>
+                                    <a href="@item.Link" title="@item.Name"><img class="img-fluid lazyload" src="~/Image/@item.Image" alt="brand1" width="158" height="79" /></a>
+                                </div>
                             }
-                            
+
 
                         </div>
                     </div>
@@ -2527,50 +2545,50 @@
                             @foreach (var item in ListContent)
                             {
                                 var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
-                            <div class="productCarousel-slide">
-                                <article class="blog-post product-grid">
+                                <div class="productCarousel-slide">
+                                    <article class="blog-post product-grid">
 
-                                    <div class="blog-post-figure">
-                                        <figure class="blog-thumbnail">
-                                            <a href="@url">
-                                                <img data-sizes="auto" class="img-fluid lazyload " src="@item.Image" alt="Proin dictum justo a nisl." title="@item.Name">
-                                            </a>
-                                            <div class="blog-meta" title="@item.CreateDate.">
-                                                @if(item.CreateDate != null)
-                                                {
-                                                <span class="post-date-month">
+                                        <div class="blog-post-figure">
+                                            <figure class="blog-thumbnail">
+                                                <a href="@url">
+                                                    <img data-sizes="auto" class="img-fluid lazyload " src="@item.Image" alt="Proin dictum justo a nisl." title="@item.Name">
+                                                </a>
+                                                <div class="blog-meta" title="@item.CreateDate.">
+                                                    @if (item.CreateDate != null)
+                                                    {
+                                                        <span class="post-date-month">
 
-                                                  @item.CreateDate.Value.ToString("MMM")
-                                                </span>
-                                                <span class="post-date-day"> @item.CreateDate.Value.Day</span>
-                                                }
-                                            </div>
-                                        </figure>
-                                    </div>
+                                                            @item.CreateDate.Value.ToString("MMM")
+                                                        </span>
+                                                        <span class="post-date-day"> @item.CreateDate.Value.Day</span>
+                                                    }
+                                                </div>
+                                            </figure>
+                                        </div>
 
-                                    <div class="blog-header">
-                                        <h2 class="blog-title">
-                                            <a href="blog/proin-dictum-justo-a-nisl-fc2ba1/index.html">@item.Name</a>
-                                        </h2>
-                                    </div>
+                                        <div class="blog-header">
+                                            <h2 class="blog-title">
+                                                <a href="@url">@item.Name</a>
+                                            </h2>
+                                        </div>
 
-                                    <div class="blog-post-body">
-
-
-                                        <p class="article-description ">
-                                           @item.Description
-                                        </p>
+                                        <div class="blog-post-body">
 
 
-                                        <div class="clear"></div>
+                                            <p class="article-description ">
+                                                @item.Description
+                                            </p>
 
-                                        <a href="@url" class="btn--readmore">Đọc <i class="fa fa-arrow-circle-right"></i></a>
+
+                                            <div class="clear"></div>
+
+                                            <a href="@url" class="btn--readmore">Đọc <i class="fa fa-arrow-circle-right"></i></a>
 
 
 
-                                    </div>
-                                </article>
-                            </div>
+                                        </div>
+                                    </article>
+                                </div>
                             }
 
 

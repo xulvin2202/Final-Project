@@ -55,9 +55,9 @@ namespace Ecommerce.Areas.Admin.Controllers
                     if (image != null)
                     {
                         filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") + image.FileName;
-                        path = Path.Combine(Server.MapPath("~/Image/"), filename);
+                        path = Path.Combine(Server.MapPath("~/Image"), filename);
                         image.SaveAs(path);
-                        a.Image = filename; //Luu ý
+                        a.Image = filename;//Luu ý
                     }
                     else
                     {

@@ -69,9 +69,12 @@ namespace Model.Dao
         {
             return db.Users.Find(id);
         }
+        
         public int Login(string userName,string passWord)
         {
             var result = db.Users.SingleOrDefault(a => a.UserName == userName);
+            
+
             if(result == null)
             {
                 return 0;
@@ -123,5 +126,6 @@ namespace Model.Dao
         {
             return db.Users.Count(x => x.Email == email) > 0;
         }
+        
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,21 +14,27 @@ namespace Ecommerce.Areas.Admin.Controllers
 {
     public class ContentController : BaseController
     {
-        
+        private EcommerceDbContext db = new EcommerceDbContext();
+
         // GET: Admin/Content
         public ActionResult Index()
         {
             var dao = new UserDao();
             var model = dao.ListAllContent();
-           
             return View(model);
-            //return View(contents.ToList());
         }
+        
         [HttpGet]
         public ActionResult Create()
         {
             SetViewBag();
             return View();
+        }
+        [HttpDelete]
+        public ActionResult Delete(int id)
+        {
+            new ContentDao().Delete(id);
+            return RedirectToAction("Index");
         }
         public ActionResult Edit(long id)
         {
@@ -56,26 +63,19 @@ namespace Ecommerce.Areas.Admin.Controllers
                 if (ModelState.IsValid)
                 {
                     var dao = new ContentDao();
-
-                    
-                    var    filename = "";
+                    var filename = "";
                     var path = "";
                     if (image != null)
                     {
-                        //filename =image.FileName; 
-                        //path = Path.Combine(Server.MapPath("~/Image/"), filename);
-                        ////Luu ý chỗ này hơi sai á
-                        //image.SaveAs(path);
-                        //content.Image = filename;
-                        filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") +image.FileName;
+                        filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") + image.FileName;
                         path = Path.Combine(Server.MapPath("~/Image"), filename);
                         image.SaveAs(path);
-                        content.Image = filename; //Luu ý
+                        content.Image = filename;
                     }
-                    //else 
+                    //else
                     //{
-                    //    //image.SaveAs(path);
-                    //    content.Image = "logo.png";
+
+                    //    content.Image = "~/Image/logo.png";
                     //}
                     content.Name = content.Name;
                     content.CreateDate = Convert.ToDateTime(DateTime.UtcNow.ToLocalTime());
@@ -109,10 +109,24 @@ namespace Ecommerce.Areas.Admin.Controllers
             SetViewBag();
             return View(content);
         }
+        public ActionResult Detail(int? id)
+        {
+            var dao = new ContentDao();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Content content = db.Contents.Find(id);
+            if (content == null)
+            {
+                return HttpNotFound();
+            }
+            return View(content);
+        }
         public void SetViewBag(long? seletedID = null)
         {
             var dao = new Model.Dao.EcommerceDao();
-            ViewBag.Content_Category_ID = new SelectList(dao.ListAllContent(),"ID","Name",seletedID);
+            ViewBag.Content_Category_ID = new SelectList(dao.ListAllContent(), "ID", "Name", seletedID);
 
         }
     }

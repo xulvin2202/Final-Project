@@ -24,7 +24,8 @@
             customConfig: '/Assets/Admin/ckeditor/config.js',
         });</script>}
 
-@using (Html.BeginForm())
+
+@using (Html.BeginForm("Create", "Content", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -61,8 +62,8 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control", @id = "txtImage" }, id = "txtImage" })
                 <a id="btnSelectImage" href="#">Chọn ảnh</a>
-                @*<input type="file" name="image" id="image" />*@
-                
+                @*<input type="file" name="image" id="btnSelectImage" />*@
+
                 @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>
         </div>
