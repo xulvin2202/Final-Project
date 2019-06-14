@@ -19,6 +19,11 @@ namespace Ecommerce.Areas.Admin
                 "Admin/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
+            context.MapRoute(
+               "",
+               "admin",
+               new { action = "Login", Controller = "Login", id = UrlParameter.Optional }
+           );
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Model.EF
     {
         public long ID { get; set; }
 
-        [Required]
+        
         [StringLength(250)]
         public string Name { get; set; }
 
@@ -21,10 +21,10 @@ namespace Model.EF
         [StringLength(500)]
         public string Description { get; set; }
 
-        [StringLength(250)]
+        [StringLength(500)]
         public string Image { get; set; }
 
-        [Required]
+        
         [Column(TypeName = "ntext")]
         public string Detail { get; set; }
         

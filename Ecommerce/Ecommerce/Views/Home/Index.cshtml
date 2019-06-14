@@ -35,7 +35,7 @@
                             <div class="heroCarousel-slide "
                                  style="background-image: url(../Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/s-5jeysafj8q/product_images/theme_images/it.png)">
                                 <a href="@item.Link">
-                                    <img src="@item.Image" alt="" title="" />
+                                    <img src="~/Image/@item.Image" alt="" title="" />
                                 </a>
                             </div>
                         }
@@ -195,7 +195,7 @@
                                                                 }
                                                                
                                                             <a href="@url" class="product-item-photo">
-                                                                <img class="card-image lazyload" data-sizes="auto" src="@item.Image" alt="" width="85" height="85">
+                                                                <img class="card-image lazyload" data-sizes="auto" src="~/Image/@item.Image" alt="" width="85" height="85">
                                                             </a>
                                                         </div>
                                                     <div class="right-block">
@@ -1220,7 +1220,7 @@
         </div>*@
 
                                                     <a href="@url" class="product-item-photo">
-                                                        <img class="img-responsive lazyload" data-sizes="auto" src="@item.Image" alt="" title="">
+                                                        <img class="img-responsive lazyload" data-sizes="auto" src="~/Image/@item.Image" alt="" title="">
                                                     </a>
 
                                                     <a href="#" class="quickview btn-button d-none d-md-block" data-animation="false" data-product-id="103" title="Quick view"> <i class="fa fa-search"></i></a>
@@ -1477,7 +1477,7 @@
                                                     </div>s*@
 
                                                     <a href="@url" class="product-item-photo">
-                                                        <img class="img-responsive lazyload" data-sizes="auto" src="@item.Image" data-src="@item.Image" alt="" title="">
+                                                        <img class="img-responsive lazyload" data-sizes="auto" src="~/Image/@item.Image"  alt="" title="">
                                                     </a>
 
                                                     <a href="#" class="quickview btn-button d-none d-md-block" data-animation="false" data-product-id="103" title="Quick view"> <i class="fa fa-search"></i></a>
@@ -2465,7 +2465,7 @@
                             {
                             <div class="sb-brand--item">
 
-                                <a href="@item.Link" title="@item.Name"><img class="img-fluid lazyload" src="@item.Image" data-src="@item.Image" alt="brand1" width="158" height="79" /></a>
+                                <a href="@item.Link" title="@item.Name"><img class="img-fluid lazyload" src="~/Image/@item.Image" alt="brand1" width="158" height="79" /></a>
                             </div>
                             }
                             
@@ -2533,7 +2533,7 @@
                                     <div class="blog-post-figure">
                                         <figure class="blog-thumbnail">
                                             <a href="@url">
-                                                <img data-sizes="auto" class="img-fluid lazyload " src="@item.Image" data-src="@item.Image" alt="Proin dictum justo a nisl." title="@item.Name">
+                                                <img data-sizes="auto" class="img-fluid lazyload " src="@item.Image" alt="Proin dictum justo a nisl." title="@item.Name">
                                             </a>
                                             <div class="blog-meta" title="@item.CreateDate.">
                                                 @if(item.CreateDate != null)

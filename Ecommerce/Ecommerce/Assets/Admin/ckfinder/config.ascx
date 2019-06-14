@@ -16,7 +16,8 @@
         //
         // ... where Session[ "IsAuthorized" ] is set to "true" as soon as the
         // user logs on your system.
-
+        //if ((bool)Session["logined"] == false)
+        //return false;
         return Session["USER_SESSION"] != null;
     }
 
@@ -27,15 +28,15 @@
     {
         // Paste your license name and key here. If left blank, CKFinder will
         // be fully functional, in Demo Mode.
-        LicenseName = "";
-        LicenseKey = "";
+        LicenseName = "@tuannguyen";
+LicenseKey = "AUKPSE6XSVSJTP4MSV9RQKJBKGLL3KN7";
 
         // The base URL used to reach files in CKFinder through the browser.
         BaseUrl = "/Image/";
+        //BaseDir = HttpContext.Current.Server.MapPath("~/Image/");
 
         // The phisical directory in the server where the file will end up. If
         // blank, CKFinder attempts to resolve BaseUrl.
-        BaseDir = "";
 
         // Optional: enable extra plugins (remember to copy .dll files first).
         Plugins = new string[] {
@@ -112,14 +113,6 @@
         // Perform additional checks for image files.
         SecureImageUploads = true;
 
-        // Enables protection in the connector.
-        // The default CSRF protection mechanism is based on double submit cookies, where
-        // connector checks if the request contains a valid token that matches the token
-        // sent in the cookie
-        //
-        // https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet#Double_Submit_Cookies
-        //EnableCsrfProtection = true;
-
         // The session variable name that CKFinder must use to retrieve the
         // "role" of the current user. The "role" is optional and can be used
         // in the "AccessControl" settings (bellow in this file).
@@ -179,8 +172,8 @@
         type.DeniedExtensions = new string[] { };
 
         type = ResourceType.Add( "Images" );
-        type.Url = BaseUrl + "images/";
-        type.Dir = BaseDir == "" ? "" : BaseDir + "images/";
+        type.Url = BaseUrl + "img/";
+        type.Dir = BaseDir == "" ? "" : BaseDir + "img/";
         type.MaxSize = 0;
         type.AllowedExtensions = new string[] { "bmp", "gif", "jpeg", "jpg", "png" };
         type.DeniedExtensions = new string[] { };

@@ -833,23 +833,11 @@
     <script src="~/Assets/Admin/oculux/puffintheme.com/demo/oculux/html/assets/bundles/mainscripts.bundle.js"></script>
 
     <script src="~/Assets/Admin/oculux/puffintheme.com/demo/oculux/html/assets/bundles/userController.js"></script>
-    <script src="/Assets/Admin/ckfinder/ckfinder.js"></script>
-    <script src="/Assets/Admin/ckeditor/ckeditor.js"></script>
 
-
-    <script>
-        $('#btnSelectImage').on('click', function (e) {
-            e.preventDefault();
-            var finder = new CKFinder();
-            finder.selectActionFunction = function (fileUrl) {
-                $('#txtImage').val(fileUrl);
-            };
-            finder.popup();
-        })
-        var editor = CKEDITOR.replace('txtContent', {
-            customConfig: '/Assets/Admin/ckeditor/config.js',
-        })
-    </script>
+    <script src="~/Assets/Admin/ckfinder/config.js"></script>
+    <script src="~/Assets/Admin/ckeditor/ckeditor.js"></script>
+    <script src="~/Assets/Admin/ckeditor/config.js"></script>
+    <script src="~/Assets/Admin/ckfinder/ckfinder.js"></script>
     <script>
         function heartBeat() {
             $.get("KeepAlive.ashx?", function (data) { });
@@ -859,6 +847,17 @@
         });
 
     </script>
+    @*<script type="text/javascript">
+        function BrowseServer() {
+            var finder = new CKFinder();
+            finder.image = '~/Assets/Admin/ckfinder';
+            finder.selectActionFunction = SetFileField;
+            finder.popup();
+        }
+        function SetFileField(fileUrl) {
+            document.getElementById('xFilePath').value = fileUrl;
+        }
+    </script>*@
     @RenderSection("jsFooter", required: false)
 </body>
 

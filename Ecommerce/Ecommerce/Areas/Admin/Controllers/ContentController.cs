@@ -13,7 +13,7 @@ namespace Ecommerce.Areas.Admin.Controllers
 {
     public class ContentController : BaseController
     {
-        private EcommerceDbContext db = new EcommerceDbContext();
+        
         // GET: Admin/Content
         public ActionResult Index()
         {
@@ -49,35 +49,41 @@ namespace Ecommerce.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Create([Bind(Include = "ID,Name,MetaTitle,Description,Detail,Image,CreateDate,CreateBy,ModifiedDate,ModifiedBy,MetaKeywords,MetaDescription")]Content content, HttpPostedFileBase image)
+        public ActionResult Create([Bind(Include = "ID,Name,MetaTitle,Description,Detail,Image,CreateDate,CreateBy,ModifiedDate,ModifiedBy,MetaKeywords,MetaDescription,Content_Category_ID,Status")]Content content, HttpPostedFileBase image)
         {
             try
             {
-                var path = "";
-                var filename = "";
                 if (ModelState.IsValid)
                 {
                     var dao = new ContentDao();
-                    var a = new Content();
 
                     
+                    var    filename = "";
+                    var path = "";
                     if (image != null)
                     {
-                        filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") + image.FileName;
-                        path = Path.Combine(Server.MapPath("~/Image/"), filename);
+                        //filename =image.FileName; 
+                        //path = Path.Combine(Server.MapPath("~/Image/"), filename);
+                        ////Luu ý chỗ này hơi sai á
+                        //image.SaveAs(path);
+                        //content.Image = filename;
+                        filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") +image.FileName;
+                        path = Path.Combine(Server.MapPath("~/Image"), filename);
                         image.SaveAs(path);
-                        a.Image = filename; //Luu ý
+                        content.Image = filename; //Luu ý
                     }
-                    else
-                    {
-                        a.Image = "logo.png";
-                    }
-                    a.Name = content.Name;
-                    a.CreateDate = Convert.ToDateTime(DateTime.Now.ToString());
-                    a.MetaTitle = Functions.ConvertToUnSign(content.Name);
-                    a.Description = content.Description;
-                    a.Detail = content.Detail;
-                    a.Status = true;
+                    //else 
+                    //{
+                    //    //image.SaveAs(path);
+                    //    content.Image = "logo.png";
+                    //}
+                    content.Name = content.Name;
+                    content.CreateDate = Convert.ToDateTime(DateTime.UtcNow.ToLocalTime());
+                    content.MetaTitle = Functions.ConvertToUnSign(content.Name);
+                    content.Description = content.Description;
+                    content.Detail = content.Detail;
+                    content.Content_Category_ID = content.Content_Category_ID;
+                    content.Status = Convert.ToBoolean(true);
                     var id = dao.Insert(content);
                     if (id > 0)
                     {
