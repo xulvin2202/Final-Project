@@ -11,7 +11,6 @@ namespace Model.EF
     {
         public long ID { get; set; }
 
-        
         [StringLength(250)]
         public string Name { get; set; }
 
@@ -24,10 +23,9 @@ namespace Model.EF
         [StringLength(500)]
         public string Image { get; set; }
 
-        
         [Column(TypeName = "ntext")]
         public string Detail { get; set; }
-        
+
         public DateTime? CreateDate { get; set; }
 
         [StringLength(50)]

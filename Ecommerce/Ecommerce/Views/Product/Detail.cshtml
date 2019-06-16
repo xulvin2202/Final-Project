@@ -38,13 +38,13 @@
     </div>
 </div>
 
-<div id="modal" class="modal" data-reveal data-prevent-quick-search-close>
+@*<div id="modal" class="modal" data-reveal data-prevent-quick-search-close>
     <a href="#" class="modal-close" aria-label="Close" role="button">
         <span aria-hidden="true">&#215;</span>
     </a>
     <div class="modal-content"></div>
     <div class="loadingOverlay"></div>
-</div>
+</div>*@
 
 <div class="main-body clearfix sidebar--left">
 
@@ -818,9 +818,10 @@
                                             <p class="alertBox-column alertBox-message"></p>
                                         </div>
                                         <div class="form-action">
-                                            <input id="form-action-addToCart" data-wait-message="Adding to cart…" class="button button--primary button--addtocart" type="submit"
-                                                   value="Thêm vào giỏ hàng">
+                                            
+                                            <a href="/them-gio-hang?productId=@Model.ID&quantity=1" id="form-action-addToCart" data-wait-message="Adding to cart…" class="button button--primary button--addtocart" >Thêm vào giỏ hàng</a>
                                         </div>
+
                                         <!-- snippet location product_addtocart -->
                                     </form>
                                     <form action="https://sb-clickboom.mybigcommerce.com/wishlist.php?action=add&amp;product_id=93" class="form form-wishlist form-action" data-wishlist-add method="post">
@@ -947,13 +948,13 @@
                         </article>
                     </div>
 
-                    <div id="previewModal" class="modal modal--large" data-reveal>
+                    @*<div id="previewModal" class="modal modal--large" data-reveal>
                         <a href="#" class="modal-close" aria-label="Close" role="button">
                             <span aria-hidden="true">&#215;</span>
                         </a>
                         <div class="modal-content"></div>
                         <div class="loadingOverlay"></div>
-                    </div>
+                    </div>*@
 
                     <div class="productView-related ">
                         <ul class="tabs nav-tabs" data-tab role="tablist">
@@ -1018,7 +1019,7 @@
                                             <article class="product-item-container ">
                                                 <div class="left-block ">
 
-                                                    <div class="product-card__gallery product-card__right d-none d-sm-block">
+                                                    @*<div class="product-card__gallery product-card__right d-none d-sm-block">
                                                         <div class="item-img thumb-active " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/98/388/5__34411.1542788343.jpg?c=2">
                                                             <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/98/388/5__34411.1542788343.jpg?c=2" alt="Laundry Detergent" title="Laundry Detergent">
                                                         </div>
@@ -1028,13 +1029,13 @@
                                                         <div class="item-img " data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/400x400/products/98/390/6__47274.1542788343.jpg?c=2">
                                                             <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/60x60/products/98/390/6__47274.1542788343.jpg?c=2" alt="Laundry Detergent" title="Laundry Detergent">
                                                         </div>
-                                                    </div>
+                                                    </div>*@
 
                                                     <a href="@url" class="product-item-photo">
                                                         <img class="img-responsive lazyload" data-sizes="auto" src="@item.Image" alt="" title="">
                                                     </a>
 
-                                                    <a href="#" class="quickview btn-button d-none d-md-block" data-animation="false" data-product-id="98" title="Quick view"> <i class="fa fa-search"></i></a>
+                                                    @*<a href="#" class="quickview btn-button d-none d-md-block" data-animation="false" data-product-id="98" title="Quick view"> <i class="fa fa-search"></i></a>*@
 
 
 
@@ -1098,7 +1099,7 @@
 
                                                     <div class="button-group">
 
-                                                        <div class="action-item wishlist">
+                                                        @*<div class="action-item wishlist">
                                                             <form class="form" method="post" action="https://sb-clickboom.mybigcommerce.com/wishlist.php?action=add&amp;product_id=98" data-wishlist-add>
                                                                 <input type="hidden" name="variation_id" value="">
                                                                 <input class="button button--small card-figcaption-button" type="hidden" value="Add to Wish List">
@@ -1108,20 +1109,20 @@
                                                                 </button>
                                                             </form>
 
-                                                        </div>
+                                                        </div>*@
 
 
                                                         <div class="action-item addToCart">
-                                                            <a href="@url" data-addtocart data-product-id="98" data-wait-message="Add to Cart" class="action-link  button--cart" title="Add to Cart">Thêm vào giỏ hàng</a>
+                                                            <a href="/them-gio-hang?productId=@item.ID&quantity=1" @*data-addtocart data-product-id="98" data-wait-message="Add to Cart"*@ @*class="action-link  button--cart"*@ title="Add to Cart">Thêm vào giỏ hàng</a>
                                                         </div>
 
 
-                                                        <div class="action-item compare ">
+                                                        @*<div class="action-item compare ">
                                                             <input class="form-check-input" type="checkbox" name="products[]" value="98" data-compare-id="98">
                                                             <label class="form-check-label">
                                                                 <i class="fa fa-refresh"></i>
                                                             </label>
-                                                        </div>
+                                                        </div>*@
 
                                                     </div>
                                                 </div>

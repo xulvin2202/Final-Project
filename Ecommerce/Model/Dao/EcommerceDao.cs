@@ -43,56 +43,12 @@ namespace Model.Dao
         {
             return db.Footers.Where(x => x.FooterType_ID == groupId && x.Status == true).OrderBy(x => x.DisplayOrder).ToList();
         }
-        public List<Product> ListNewProduct(int top)
-        {
-            return db.Products.OrderByDescending(x => x.CreateDate).Take(top).ToList();
-        }
-        public List<Product> ListByCategoryId(long categoryID, ref int totalRecord, int pageIndex=1,int pageSize=2)
-        {
-            totalRecord = db.Products.Where(x => x.Category_ID == categoryID).Count();
-            var model = db.Products.Where(x => x.Category_ID == categoryID).OrderByDescending(x=>x.CreateDate).Skip((pageSize-1)*pageIndex).Take(pageSize).ToList();
-            return model;
-        }
-        public List<Product> ListFeatureProduct(int top)
-        {
-            return db.Products.Where(x => x.TopHot != null && x.TopHot > DateTime.Now).OrderByDescending(x => x.CreateDate).Take(top).ToList();
-        }
-        public List<Product> ListSaleProduct(int top)
-        {
-            return db.Products.OrderByDescending(x => x.PromotionPrice ).Take(top).ToList();
-        }
-        public List<Content> ListContent(int id)
-        {
-            return db.Contents.OrderByDescending(x => x.CreateDate).Take(id).ToList();
-        }
-        /// <summary>
-        /// listbrandbyifproduct
-        /// </summary>
-        /// <param name="productID"></param>
-        /// <returns></returns>
-        //public List<Brand> ListAllBrand(long productID)
-        //{
-        //    var id = db.Products.Find(productID);
-        //    return db.Brands.Where(x => x.ID!= productID && x.ID == id.Brand_ID).ToList();
-        //}
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="brand"></param>
-        /// <returns></returns>
-        public List<Brand> ListBrand(int brand)
-        {
-            return db.Brands.OrderBy(x => x.CreateDate).Take(brand).ToList();
-        }
-        public List<Product> ListRelatedProducts(long productID)
-        {
-            var product = db.Products.Find(productID);
-            return db.Products.Where(x => x.ID != productID && x.Category_ID == product.Category_ID).ToList();
-        }
-        public Product ViewDetail(long id)
-        {
-            return db.Products.Find(id);
-        }
+        
+       
+        
+        
+        
+        
         
         
 

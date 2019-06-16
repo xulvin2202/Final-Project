@@ -5,7 +5,7 @@
 
 <!-- Mirrored from sb-clickboom.mybigcommerce.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Jun 2019 01:36:24 GMT -->
 <!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"  /><!-- /Added by HTTrack -->
 <head>
     @*<title>SB-ClickBoom</title>*@
 
@@ -17,7 +17,7 @@
 
     <link href="https://cdn11.bigcommerce.com/r-6fbcb23fc6f57fe4b63f62d66e95155a1ce6b177/img/bc_favicon.ico" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    <link href="~/Assets/Client/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet" />
     <link data-stencil-stylesheet href="~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/css/theme-e66d7b10-fb9a-0136-2016-0758c51394b6.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&amp;display=swap" rel="stylesheet">
@@ -95,7 +95,7 @@
                         <div class="col-8 logo-container text-center">
                             <a href="/" target="_self" class="header-logo">
                                 <div class="header-logo-image-container">
-                                    <img class="header-logo-image" href="/" target="_self" src="~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/250x100/logo_1544415020__65511.original.png" alt="SB-ClickBoom" title="SB-ClickBoom">
+                                    <img class="header-logo-image" href="/"  target="_self" src="~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/250x100/logo_1544415020__65511.original.png" alt="SB-ClickBoom" title="SB-ClickBoom">
                                 </div>
                             </a>
                         </div>
@@ -379,7 +379,7 @@
                                             <div class="navPage-subMenu " id="navPages-mwebpage-0" aria-hidden="true" tabindex="-1">
                                                 <div class="imageArea col-sm-12">
                                                     <div class="gr-dropzone"
-                                                         data-products-by-category-tabs="@Url.Action("Index","Brand")"
+                                                         data-products-by-category-tabs="@Url.Action("Index", "Brand")"
                                                          data-urltemplate="sbthemes/webpage/default">
                                                         <div class="productLoading">
                                                             <img class="img-responsive lazyload" src="https://cdn11.bigcommerce.com/s-5jeysafj8q/stencil/d7a3b3a0-fb9a-0136-bca6-1b3c63b2f4dc/e/7d147310-fb9b-0136-a892-03abfbabe237/img/loading.svg" alt="loading" width="50" height="50">
@@ -500,7 +500,7 @@
                 <div class="container ">
                     <div class="row justify-content-between ">
                         <div class="col-3 logo-container">
-                            <a href="index.html" class="header-logo">
+                            <a href="/" ref="nofollow" class="header-logo">
                                 <div class="header-logo-image-container">
                                     <img class="header-logo-image" src="~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/s-5jeysafj8q/images/stencil/250x100/logo_1544415020__65511.original.png" alt="SB-ClickBoom" title="SB-ClickBoom">
                                 </div>
@@ -518,29 +518,8 @@
                             <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
                                 <span class="mobileMenu-toggleIcon">Toggle menu</span>
                             </a>
-
-                            <div class="header-bottom__cart">
-                                <ul class="navUser-section">
-                                    <li class="navUser-item">
-                                        <a class="cart-button cart-button--primary" data-cart-preview data-dropdown="cart-preview-dropdown" href="cart.html">
-                                            <div class="cart_ico">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span id="CartCount" class="cout_cart text-countPill cart-quantity"> 0  </span>
-                                            </div>
-                                            <div class="cart_info">
-                                                <p class="text-shopping-cart">Shopping Cart</p>
-                                                <span class="total_cart">
-                                                    <span class="text-countPill cart-quantity">0 items - </span>
-                                                    <span class="cart-subtotal">$0.00</span>
-                                                </span>
-                                            </div>
-                                        </a>
-                                        <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content
-                                             aria-hidden="true"></div>
-                                    </li>
-                                </ul>
-
-                            </div>
+                            @{ Html.RenderAction("HeaderCart", "Home");}
+                            
                         </div>
                     </div>
                 </div>
@@ -737,13 +716,13 @@
 
     </footer>
 
-    <div id="previewModal" class="modal modal--large" data-reveal>
+    @*<div id="previewModal" class="modal modal--large" data-reveal>
         <a href="#" class="modal-close" aria-label="Close" role="button">
             <span aria-hidden="true">&#215;</span>
         </a>
         <div class="modal-content"></div>
         <div class="loadingOverlay"></div>
-    </div>
+    </div>*@
 
     <div class="icons-svg-sprite">
         <svg xmlns="http://www.w3.org/2000/svg">
@@ -910,6 +889,7 @@
     <script type="text/javascript" src="~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/r-6fbcb23fc6f57fe4b63f62d66e95155a1ce6b177/javascript/visitor_stencil.js"></script>
     <!-- snippet location footer -->
     <script src="~/Assets/Client/TemplateUI/ClickBoom/cdn11.bigcommerce.com/r-6fbcb23fc6f57fe4b63f62d66e95155a1ce6b177/javascript/jquery-3.1.1.min.js" crossorigin="anonymous">></script>
+    @RenderSection("jsFooter",required:false)
 </body>
 
 <!-- Mirrored from sb-clickboom.mybigcommerce.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Jun 2019 01:37:47 GMT -->

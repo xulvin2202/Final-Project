@@ -3,7 +3,7 @@
         @foreach(var item in Model)
         {
         <li class="navPages-item navPages-item-page">
-            <a class="navPages-action" href="@item.Link" target="@item.Target">@item.Text</a>
+            <a class="navPages-action" ref="nofollow" href="@item.Link" target="@item.Target">@item.Text</a>
         </li>
         }
     </ul>

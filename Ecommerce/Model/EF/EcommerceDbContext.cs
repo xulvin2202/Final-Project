@@ -1,4 +1,4 @@
-namespace Model.EF
+﻿namespace Model.EF
 {
     using System;
     using System.Data.Entity;
@@ -26,6 +26,8 @@ namespace Model.EF
         public virtual DbSet<Material> Materials { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<MenuType> MenuTypes { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Poster> Posters { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductAttribute> ProductAttributes { get; set; }
@@ -128,6 +130,14 @@ namespace Model.EF
             modelBuilder.Entity<Madein>()
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
+
+            modelBuilder.Entity<Order>()
+                .Property(e => e.ShipMobile)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<OrderDetail>()
+                .Property(e => e.Price)
+                .HasPrecision(18, 0);
 
             modelBuilder.Entity<Product>()
                 .Property(e => e.Code)

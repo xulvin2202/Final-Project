@@ -60,6 +60,9 @@
     <Compile Include="Dao\ContentCategoryDao.cs" />
     <Compile Include="Dao\ContentDao.cs" />
     <Compile Include="Dao\EcommerceDao.cs" />
+    <Compile Include="Dao\OrderDao.cs" />
+    <Compile Include="Dao\OrderDetailDao.cs" />
+    <Compile Include="Dao\ProductDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="EF\About.cs" />
     <Compile Include="EF\Admin.cs" />
@@ -77,6 +80,8 @@
     <Compile Include="EF\Material.cs" />
     <Compile Include="EF\Menu.cs" />
     <Compile Include="EF\MenuType.cs" />
+    <Compile Include="EF\Order.cs" />
+    <Compile Include="EF\OrderDetail.cs" />
     <Compile Include="EF\Poster.cs" />
     <Compile Include="EF\Product.cs" />
     <Compile Include="EF\ProductAttribute.cs" />
@@ -85,6 +90,7 @@
     <Compile Include="EF\Tag.cs" />
     <Compile Include="EF\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\PagedList.css" />

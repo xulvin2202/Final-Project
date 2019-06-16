@@ -14,9 +14,12 @@ namespace Model.EF
         [StringLength(250)]
         public string Name { get; set; }
 
-        [Column(TypeName = "ntext")]
+        [StringLength(500)]
+        public string Image { get; set; }
+
+        [StringLength(550)]
         public string Link { get; set; }
 
-        public long? Position_Poster_ID { get; set; }
+        public int Position_Poster_ID { get; set; }
     }
 }

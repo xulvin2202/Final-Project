@@ -20,9 +20,9 @@ namespace Model.EF
         [StringLength(550)]
         public string Link { get; set; }
 
-        public DateTime? CreateDate { get; set; }
-
         public long? ParentID { get; set; }
+
+        public DateTime? CreateDate { get; set; }
 
         public bool? Status { get; set; }
 

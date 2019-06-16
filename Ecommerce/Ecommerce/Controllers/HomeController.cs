@@ -1,4 +1,6 @@
-﻿using Model.Dao;
+﻿using Common;
+using Ecommerce.Models;
+using Model.Dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,7 @@ namespace Ecommerce.Controllers
         public ActionResult Index()
         {
             var model = new EcommerceDao().ListSlide();
-            var product = new EcommerceDao();
+            var product = new ProductDao();
             ViewBag.NewProduct = product.ListNewProduct(8);
             ViewBag.FeatureProduct = product.ListFeatureProduct(8);
             ViewBag.SaleProduct = product.ListSaleProduct(4);
@@ -52,8 +54,20 @@ namespace Ecommerce.Controllers
             var model = new EcommerceDao().ListFooterByGroupId(2);
             return PartialView(model);
         }
-      
-        
+        [ChildActionOnly]
+        public PartialViewResult HeaderCart()
+        {
+            var cart = Session[CommonConstants.CartSession];
+            var list = new List<CartItem>();
+            if (cart != null)
+            {
+                list = (List<CartItem>)cart;
+            }
+
+            return PartialView(list);
+        }
+
+
 
     }
 }
