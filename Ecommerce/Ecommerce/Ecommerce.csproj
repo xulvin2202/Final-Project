@@ -170,6 +170,7 @@
     <Compile Include="Common\MailHelper.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -3486,6 +3487,7 @@
     <Content Include="Assets\Client\fontawesome-free-5.9.0-web\webfonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cloud-zoom.js" />
+    <Content Include="Scripts\contactController.js" />
     <Content Include="Scripts\countdown.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -3532,6 +3534,7 @@
     <Content Include="Views\Shared\HeaderCart.cshtml" />
     <Content Include="Views\Cart\Payment.cshtml" />
     <Content Include="Views\Cart\Success.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

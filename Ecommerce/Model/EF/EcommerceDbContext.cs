@@ -31,7 +31,7 @@
         public virtual DbSet<Poster> Posters { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductAttribute> ProductAttributes { get; set; }
-        public virtual DbSet<Review> Reviews { get; set; }
+        public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<Slide> Slides { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<User> Users { get; set; }
@@ -183,11 +183,11 @@
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Review>()
+            modelBuilder.Entity<Feedback>()
                 .Property(e => e.Email)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Review>()
+            modelBuilder.Entity<Feedback>()
                 .Property(e => e.Address)
                 .IsFixedLength();
 

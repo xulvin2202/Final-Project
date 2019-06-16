@@ -6,8 +6,8 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Review")]
-    public partial class Review
+    [Table("Feedback")]
+    public partial class Feedback
     {
         public int ID { get; set; }
 
@@ -30,6 +30,6 @@ namespace Model.EF
 
         public bool? Status { get; set; }
 
-        public long? Product_ID { get; set; }
+     
     }
 }

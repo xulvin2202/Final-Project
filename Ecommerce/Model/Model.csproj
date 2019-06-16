@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dao\CategoryDao.cs" />
+    <Compile Include="Dao\ContactDao.cs" />
     <Compile Include="Dao\ContentCategoryDao.cs" />
     <Compile Include="Dao\ContentDao.cs" />
     <Compile Include="Dao\EcommerceDao.cs" />
@@ -85,7 +86,7 @@
     <Compile Include="EF\Poster.cs" />
     <Compile Include="EF\Product.cs" />
     <Compile Include="EF\ProductAttribute.cs" />
-    <Compile Include="EF\Review.cs" />
+    <Compile Include="EF\Feedback.cs" />
     <Compile Include="EF\Slide.cs" />
     <Compile Include="EF\Tag.cs" />
     <Compile Include="EF\User.cs" />

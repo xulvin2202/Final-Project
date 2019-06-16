@@ -57,11 +57,18 @@ namespace Ecommerce
                 namespaces: new[] { "OnlineShop.Controllers" }
               );
             routes.MapRoute(
+               name: "Contact",
+               url: "lien-he",
+               defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
+               namespaces: new[] { "Ecommerce.Controllers" }
+           );
+            routes.MapRoute(
                name: "Default",
                url: "{controller}/{action}/{id}",
                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                namespaces: new[] { "Ecommerce.Controllers" }
            );
+
         }
     }
 }
