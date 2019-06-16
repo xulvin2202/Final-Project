@@ -13,7 +13,8 @@ namespace Ecommerce
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-
+            routes.IgnoreRoute("{*botdetect}",
+      new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
             routes.MapRoute(
                 name: "Category Product",
                 url: "san-pham/{metatitle}-{cateid}",
@@ -63,6 +64,11 @@ namespace Ecommerce
                namespaces: new[] { "Ecommerce.Controllers" }
            );
             routes.MapRoute(
+               name: "Register",
+               url: "dang-ky",
+               defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional },
+               namespaces: new[] { "Ecommerce.Controllers" }
+           );routes.MapRoute(
                name: "Default",
                url: "{controller}/{action}/{id}",
                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },

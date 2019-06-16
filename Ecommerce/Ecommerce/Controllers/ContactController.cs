@@ -33,7 +33,7 @@ namespace Ecommerce.Controllers
             {
                 return Json(new
                 {
-                    status = true
+                    status = Convert.ToBoolean(true)
                 });
                 //send mail
             }
@@ -41,8 +41,8 @@ namespace Ecommerce.Controllers
             else
                 return Json(new
                 {
-                    status = false
-                });
+                    status = Convert.ToBoolean(false)
+        });
 
         }
     }

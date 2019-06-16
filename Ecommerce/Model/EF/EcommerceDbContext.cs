@@ -219,5 +219,7 @@
                 .Property(e => e.MetaTitle)
                 .IsUnicode(false);
         }
+
+        //public System.Data.Entity.DbSet<Ecommerce.Models.RegisterModel> RegisterModels { get; set; }
     }
 }
