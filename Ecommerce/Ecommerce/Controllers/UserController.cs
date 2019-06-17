@@ -1,4 +1,6 @@
-﻿using Ecommerce.Common;
+﻿
+using BotDetect.Web.UI.Mvc;
+using Ecommerce.Common;
 using Ecommerce.Models;
 using Model.Dao;
 using Model.EF;

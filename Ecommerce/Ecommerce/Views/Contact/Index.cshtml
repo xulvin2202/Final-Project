@@ -51,25 +51,21 @@
     <div class="sb-breadcrumbs breadcrumb-bg ">
         <div class="entry-header">
             <h3 class="entry-title">
-                Contact Us
+                Liên Hệ
             </h3>
             <ul class="breadcrumb ">
                 <li class="breadcrumb-item ">
                     <i class="fa fa-home"></i>
-                    <a href="index.html" class="breadcrumb-label">
+                    <a href="/" ref="nofollow" class="breadcrumb-label">
                         Home
                     </a>
                 </li>
 
-                <li class="breadcrumb-item ">
-                    <a href="pages/index.html" class="breadcrumb-label">
-                        Pages
-                    </a>
-                </li>
+                
 
                 <li class="breadcrumb-item is-active">
-                    <a href="contact-us/index.html" class="breadcrumb-label">
-                        Contact Us
+                    <a href="/lien-he" ref="nofollow" class="breadcrumb-label">
+                        Liên Hệ
                     </a>
                 </li>
 
@@ -98,43 +94,47 @@
             @*bản đồ*@
             <div class="col-sm-12">
                 <div id="map-canvas">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1202663607546!2d106.71240001433688!3d10.802099861674188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a459cb43ab%3A0x6c3d29d370b52a7e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBIdXRlY2g!5e0!3m2!1svi!2s!4v1560651582024!5m2!1svi!2s" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    @Html.Raw(Model.Map)
+                   
 
                 </div>
 
             </div>
 
             <div class="col-sm-8 col-md-8">
-                <h1 class="page-heading">Contact Us</h1>
-                <form data-contact-form class="form contact-us" action="https://sb-clickboom.mybigcommerce.com/pages.php?action=sendContactForm" method="post">
+                <h1 class="page-heading">Form Liên Hệ</h1>
+                <form data-contact-form class="form contact-us" method="post">
 
 
                     <input type="hidden" name="page_id" id="page_id" value="4">
                     <div class="form-row form-row--half">
                         <div class="form-field">
                             <label class="form-label" for="contact_fullname">Tên</label>
-                            <input class="form-input" type="text" id="txtName" name="contact_fullname" value="">
+                            <input class="form-input" type="text" id="txtName" autocomplete="off" value="">
                         </div>
 
                         <div class="form-field">
-                            <label class="form-label" for="contact_phone">Phone Number</label>
-                            <input class="form-input" type="text" id="txtMobile" name="contact_phone" value="">
+                            <label class="form-label" for="contact_phone">Điện thoại</label>
+                            <input class="form-input" type="text" id="txtMobile" autocomplete="off" value="">
                         </div>
-
+                        @*<div class="form-field">
+                            <label class="form-label" for="contact_phone">Phone Number</label>
+                            <input class="form-input" type="email" id="txtMobile" value="">
+                        </div>*@
                         <div class="form-field">
                             <label class="form-label" for="contact_email">
                                 Email
                                 <small>Required</small>
                             </label>
-                            <input class="form-input" type="email" id="txtEmail" name="contact_email" value="">
+                            <input class="form-input" type="text" id="txtEmail" autocomplete="off" value="">
                         </div>
 
                         <div class="form-field">
                             <label class="form-label" for="contact_orderno">Địa chỉ</label>
-                            <input class="form-input" type="text" id="txtAddress" name="contact_orderno">
+                            <input class="form-input" type="text" autocomplete="off" id="txtAddress">
                         </div>
 
-                        
+
                     </div>
 
                     <div class="form-field">
@@ -142,10 +142,10 @@
                             Ý kiến khách hàng
                             <small>Required</small>
                         </label>
-                        <textarea name="contact_question" id="txtContent" rows="5" cols="50" class="form-input"></textarea>
+                        <textarea name="contact_question" id="txtContent" autocomplete="off" rows="5" cols="50" class="form-input"></textarea>
                     </div>
                     <div class="form-actions text-left">
-                        <input class="button button--primary" type="submit" id="btnSend" value="SEND EMAIL">
+                        <input class="button button--primary" type="submit" id="btnSend" value="Gửi">
                     </div>
                 </form>
             </div>

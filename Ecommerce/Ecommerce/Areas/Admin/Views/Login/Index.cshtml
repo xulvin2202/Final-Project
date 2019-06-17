@@ -67,19 +67,21 @@
                             </div>
                             <div class="form-group">
                                 <label for="signin-password" class="control-label sr-only">Password</label>
-                           <input type="password"ss name="Password" id="Password" class="form-control" placeholder="Nhập mật khẩu" style="border-radius:25px" />
+                                <input type="password" ss name="Password" id="Password" class="form-control" placeholder="Nhập mật khẩu" style="border-radius:25px" />
+                                <input type="checkbox" onclick="myFunction()">Hiển thị mật khẩu
                             </div>
                             <div class="form-group clearfix">
                                 <label class="fancy-checkbox element-left">
                                     <input type="checkbox">
                                     <span>@Html.CheckBoxFor(model => model.RememberMe, new { @onclick = "myFunction()" })Remember me</span>
+                                    
                                 </label>
                             </div>
                             <button type="submit" class="btn btn-primary btn-round btn-block">Đăng nhập</button>
-                            <div class="bottom">
+                            @*<div class="bottom">
                                 <span class="helper-text m-b-10"><i class="fa fa-lock"></i> <a href="page-forgot-password.html">Forgot password?</a></span>
                                 <span>Don't have an account? <a href="page-register.html">Register</a></span>
-                            </div>
+                            </div>*@
                         </form>
 
 
@@ -97,7 +99,16 @@
     <script src="~/Assets/Admin/oculux/puffintheme.com/demo/oculux/html/assets/bundles/vendorscripts.bundle.js"></script>
   
     <script src="~/Assets/Admin/oculux/puffintheme.com/demo/oculux/html/assets/bundles/mainscripts.bundle.js"></script>
-    
+    <script>
+        function myFunction() {
+            var x = document.getElementById("Password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
 </body>
 
 <!-- Mirrored from puffintheme.com/demo/oculux/html/page-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 May 2019 02:40:34 GMT -->

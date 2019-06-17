@@ -42,8 +42,9 @@ namespace Ecommerce.Controllers
                 return Json(new
                 {
                     status = Convert.ToBoolean(false)
-        });
-
+                }
+                );
+            review.Status = Convert.ToBoolean(true);
         }
     }
 }

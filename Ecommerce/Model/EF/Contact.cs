@@ -12,6 +12,9 @@ namespace Model.EF
         public int ID { get; set; }
 
         [Column(TypeName = "ntext")]
+        public string Map { get; set; }
+
+        [Column(TypeName = "ntext")]
         public string Content { get; set; }
 
         public bool? Status { get; set; }
